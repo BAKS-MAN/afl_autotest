@@ -1,6 +1,7 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.ui.Booking.BookingPageObject;
 
 public class MenuPageObject extends MainPageObject{
     public MenuPageObject (AppiumDriver driver){super(driver);}
@@ -26,6 +27,13 @@ public class MenuPageObject extends MainPageObject{
     public void clickMenuItemByName(String menu_item_name){
         String menu_item_xpath = getMenuItemByName(menu_item_name);
         this.waitForElementAndClick(menu_item_xpath,"Пункт меню '"+menu_item_name+"' не найден",5);
+    }
+
+    public void openBookingScreen(){
+        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+        this.clickMenuButton();
+        this.clickMenuItemByName("Купить билет");
+        BookingPageObject.waitForBookingScreenTitle();
     }
 
 }

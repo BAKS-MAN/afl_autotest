@@ -20,6 +20,7 @@ public class CoreTestCase extends TestCase {
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
         capabilities.setCapability("platformVersion","8.0");
+//        capabilities.setCapability("platformVersion","6.0.1"); // Xiaomi Redmi Note 3 (Android 6.0.1)
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","ru.aeroflot.afltest");
         capabilities.setCapability("appActivity","ru.aeroflot.SplashScreenActivity");

@@ -1,8 +1,6 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileBy;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -11,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -44,6 +41,13 @@ public class MainPageObject {
         );
     }
 
+    // Метод для получения текстового содержимого элемента
+    public String getElementText (String locator){
+        By by = this.getLocatorByString(locator);
+        String element = driver.findElement(by).getText();
+        return element;
+    }
+
     public WebElement waitForElementAndClick (String locator, String error_message, long timeoutInSeconds){
         WebElement element = waitForElementPresent(locator, error_message, timeoutInSeconds);
         element.click();
@@ -70,10 +74,12 @@ public class MainPageObject {
         element.clear();
         return element;
     }
+
     public void freeTap(){
         TouchAction action = new TouchAction(driver);
         action.press(10, 500).release().perform();
     }
+
     public void swipeDown (int timeOfSwipe){
         TouchAction action = new TouchAction(driver);
         Dimension size = driver.manage().window().getSize();
@@ -92,7 +98,6 @@ public class MainPageObject {
         int x = size.width/2;
         int start_y = (int) (size.height*0.8);
         int end_y = (int) (size.height*0.2);
-
         action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x,end_y).release().perform();
     }
 
@@ -112,22 +117,63 @@ public class MainPageObject {
             ++already_swiped;
         }
     }
+// Для iOS
+//    public void swipeUpTillElementAppear(String locator, String error_message, int max_swipes){
+//        int already_swiped = 0;
+//        while (!this.isElementLocatedOnTheScreen(locator)){
+//            if (already_swiped > max_swipes){
+//                Assert.assertTrue(error_message, this.isElementLocatedOnTheScreen(locator));
+//            }
+//            swipeUpQuick();
+//            ++already_swiped;
+//        }
+//    }
+//    public boolean isElementLocatedOnTheScreen(String locator){
+//        int element_location_by_y = this.waitForElementPresent(locator,"Не удалось найти элемент по локатору "+locator,1).getLocation().getY();
+//        int screen_size_by_y = driver.manage().window().getSize().getHeight();
+//        return element_location_by_y < screen_size_by_y;
+//    }
 
-    public void swipeUpTillElementAppear(String locator, String error_message, int max_swipes){
+    public void swipeLeftToFindElement(String swipe_position,String locator, String error_message, int max_swipes){
+        By by = this.getLocatorByString(swipe_position);
         int already_swiped = 0;
-        while (!this.isElementLocatedOnTheScreen(locator)){
+        while (!isElementPresent(locator)){
             if (already_swiped > max_swipes){
-                Assert.assertTrue(error_message, this.isElementLocatedOnTheScreen(locator));
+                Assert.assertTrue(error_message, isElementPresent(locator));
             }
-            swipeUpQuick();
+            TouchAction action = new TouchAction(driver);
+            WebElement element = driver.findElement(by);
+            int left_x = element.getLocation().getX();
+            int right_x = left_x + element.getSize().getWidth();
+            int middle_y = element.getLocation().getY() + element.getSize().getHeight() / 2;
+            action.press(right_x, middle_y).waitAction(500).moveTo(left_x, middle_y).release().perform();
             ++already_swiped;
         }
     }
 
-    public boolean isElementLocatedOnTheScreen(String locator){
-        int element_location_by_y = this.waitForElementPresent(locator,"Cannot find element by locator "+locator,1).getLocation().getY();
-        int screen_size_by_y = driver.manage().window().getSize().getHeight();
-        return element_location_by_y < screen_size_by_y;
+    public void swipeElementToLeft(String locator,  String error_message){
+        WebElement element = waitForElementPresent(locator, error_message, 10);
+        int left_x = element.getLocation().getX();
+        int right_x = left_x + element.getSize().getWidth();
+        int upper_y = element.getLocation().getY();
+        int lower_y = upper_y + element.getSize().getHeight();
+        int middle_y = (upper_y + lower_y)/2;
+        TouchAction action = new TouchAction(driver);
+        action.press(right_x, middle_y);
+        action.waitAction(100);
+        action.moveTo(left_x, middle_y);
+        action.release();
+        action.perform();
+    }
+
+    public boolean isElementPresent(String locator){
+        By by = this.getLocatorByString(locator);
+        try {
+            driver.findElement(by);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public int getAmountOfElements(String locator){
@@ -135,18 +181,59 @@ public class MainPageObject {
         List elements = driver.findElements(by);
         return elements.size();
     }
-    public void scrollToElementFromList (String locator, String keyword_locator){
+    public void scrollDownToElementFromList(String locator, String keyword_locator, int max_swipes){
         By by = this.getLocatorByString(locator);
-        List <WebElement> list = driver.findElements(by);
-        System.out.println(list);
-        if (list != null && !list.isEmpty()) {
-            WebElement startElement = list.get(0);
-            WebElement endElement = list.get(list.size() - 1);
-            TouchAction actions = new TouchAction(driver);
-            actions.press(startElement).moveTo(endElement).release().perform();
+        boolean element_found = false;
+        int already_swiped = 0;
+        while(!element_found) {
+            if (this.isElementPresent(keyword_locator)){
+                waitForElementAndClick(keyword_locator,"Не удалсоь выбрать найденное значение.",3);
+                element_found = true;
+            } else if (already_swiped > max_swipes){
+                throw new AssertionError("Не удалось найти нужное значение в списке");
+            }
+            else {
+                TouchAction action = new TouchAction(driver);
+                WebElement element = driver.findElement(by);
+                int middleX = element.getLocation().getX() + element.getSize().getWidth() / 2;
+                int upperY = element.getLocation().getY();
+                int lowerY = upperY + element.getSize().getHeight() - 50;
+                action.press(middleX, lowerY).waitAction(1200).moveTo(middleX, upperY).release().perform(); //waitAction(1200) для GenyMotion
+                ++already_swiped;
+                continue;
+            }
+        }
+    }
+    public void scrollUpToElementFromList(String locator, String keyword_locator, int max_swipes){
+        By by = this.getLocatorByString(locator);
+        boolean element_found = false;
+        int already_swiped = 0;
+        while(!element_found) {
+            if (this.isElementPresent(keyword_locator)){
+                waitForElementAndClick(keyword_locator,"Не удалсоь выбрать найденное значение.",3);
+                element_found = true;
+            } else if (already_swiped > max_swipes){
+                throw new AssertionError("Не удалось найти нужное значение в списке");
+            }
+            else {
+                TouchAction action = new TouchAction(driver);
+                WebElement element = driver.findElement(by);
+                int middleX = element.getLocation().getX() + element.getSize().getWidth() / 2;
+                int upperY = element.getLocation().getY();
+                int lowerY = upperY + element.getSize().getHeight() - 50;
+                action.press(middleX, upperY).waitAction(1100).moveTo(middleX, lowerY).release().perform();
+                ++already_swiped;
+                continue;
+            }
         }
     }
 
+    public void getDate (String date){
+        String[] exploded_date = date.split(Pattern.quote("/"),3);
+        String day = exploded_date[0];
+        String month = exploded_date[1];
+        String year = exploded_date[2];
+    }
     public void assertElementNotPresent(String locator, String error_message){
         int amount_of_elements = getAmountOfElements(locator);
         if (amount_of_elements > 0){
