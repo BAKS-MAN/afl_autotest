@@ -9,7 +9,7 @@ public class PassengersTests extends CoreTestCase {
     @Test
     public void testEditPassengerData(){
         PassengersPageObject PassengersPageObject = new PassengersPageObject(driver);
-        PassengersPageObject.SearchWithOnePassenger("Москва","Сочи",true);
+        PassengersPageObject.searchWithOnePassenger("Москва","Сочи",true);
         PassengersPageObject.editPassengerName("Petr");
         PassengersPageObject.editPassengerLastName("Test");
         PassengersPageObject.editPassengerBirthDate("1987");
@@ -26,7 +26,7 @@ public class PassengersTests extends CoreTestCase {
     @Test
     public void testEditSeveralPassengersData(){
         PassengersPageObject PassengersPageObject = new PassengersPageObject(driver);
-        PassengersPageObject.SearchWithSeveralPassengers("Москва","Берлин",false);
+        PassengersPageObject.searchWithSeveralPassengers("Москва","Берлин",false);
         PassengersPageObject.selectPassengerToEdit("Взрослый","1");
         PassengersPageObject.editPassengerName("Petr");
         PassengersPageObject.editPassengerLastName("Test");

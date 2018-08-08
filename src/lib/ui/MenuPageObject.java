@@ -36,4 +36,11 @@ public class MenuPageObject extends MainPageObject{
         BookingPageObject.waitForBookingScreenTitle();
     }
 
+    public void openReservationSearchScreen(){
+        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+        this.clickMenuButton();
+        this.clickMenuItemByName("Поиск бронирования");
+        BookingPageObject.waitForBookingScreenTitle();
+    }
+
 }

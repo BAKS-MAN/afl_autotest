@@ -7,28 +7,28 @@ public class FlightDetailsPageObject extends MainPageObject {
     public FlightDetailsPageObject(AppiumDriver driver){super(driver);}
 
     protected static final String
-            FLIGHT_INFO = "id:ru.aeroflot.afltest:id/llFlights",
-            TARIFF_INFO = "id:ru.aeroflot.afltest:id/llPrices",
-            ECONOMY_CLASS_BUTTON= "id:ru.aeroflot.afltest:id/tvEconom",
-            COMFORT_CLASS_BUTTON = "id:ru.aeroflot.afltest:id/tvComfort",
-            BUSINESS_CLASS_BUTTON = "id:ru.aeroflot.afltest:id/tvBusiness",
-            FLIGHT_DURATION = "id:ru.aeroflot.afltest:id/tvTimeInterval",
-            FLIGHT_NUMBER = "id:ru.aeroflot.afltest:id/tvFlightName",
-            FLIGHT_MODEL = "id:ru.aeroflot.afltest:id/tvAirplaneName",
-            FLIGHT_DEPARTURE_TIME = "id:ru.aeroflot.afltest:id/tvDepartureTime",
-            FLIGHT_ARRIVAL_TIME = "id:ru.aeroflot.afltest:id/tvArrivalTime",
-            FLIGHT_DEPARTURE_CITY = "id:ru.aeroflot.afltest:id/tvOriginCity",
-            FLIGHT_ARRIVAL_CITY = "id:ru.aeroflot.afltest:id/tvDestCity",
-            FLIGHT_DEPARTURE_AIRPORT = "id:ru.aeroflot.afltest:id/tvOriginAirport",
-            FLIGHT_ARRIVAL_AIRPORT = "id:ru.aeroflot.afltest:id/tvDestAirport",
-            FLIGHT_TRANSFER_CITY = "id:ru.aeroflot.afltest:id/tvTransferCity",
-            FLIGHT_TRANSFER_AIRPORT = "id:ru.aeroflot.afltest:id/tvTransferAirport",
-            FLIGHT_TRANSFER_TIME = "id:ru.aeroflot.afltest:id/tvTransferTime",
-            FARE_CLASS_NAME = "id:ru.aeroflot.afltest:id/class_name",
-            FARE_TYPE = "id:ru.aeroflot.afltest:id/tvFareClass",
-            FARE_INFO = "id:ru.aeroflot.afltest:id/tvFareInfo",
-            SELECT_FARE_TYPE_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/tvFareClass'][contains(@text,'{FARE_TYPE}')]",
-            NEXT_BUTTON = "id:ru.aeroflot.afltest:id/btnNext";
+            FLIGHT_INFO = "id:llFlights",
+            TARIFF_INFO = "id:llPrices",
+            ECONOMY_CLASS_BUTTON= "id:tvEconom",
+            COMFORT_CLASS_BUTTON = "id:tvComfort",
+            BUSINESS_CLASS_BUTTON = "id:tvBusiness",
+            FLIGHT_DURATION = "id:tvTimeInterval",
+            FLIGHT_NUMBER = "id:tvFlightName",
+            FLIGHT_MODEL = "id:tvAirplaneName",
+            FLIGHT_DEPARTURE_TIME = "id:tvDepartureTime",
+            FLIGHT_ARRIVAL_TIME = "id:tvArrivalTime",
+            FLIGHT_DEPARTURE_CITY = "id:tvOriginCity",
+            FLIGHT_ARRIVAL_CITY = "id:tvDestCity",
+            FLIGHT_DEPARTURE_AIRPORT = "id:tvOriginAirport",
+            FLIGHT_ARRIVAL_AIRPORT = "id:tvDestAirport",
+            FLIGHT_TRANSFER_CITY = "id:tvTransferCity",
+            FLIGHT_TRANSFER_AIRPORT = "id:tvTransferAirport",
+            FLIGHT_TRANSFER_TIME = "id:tvTransferTime",
+            FARE_CLASS_NAME = "id:class_name",
+            FARE_TYPE = "id:tvFareClass",
+            FARE_INFO = "id:tvFareInfo",
+            SELECT_FARE_TYPE_TPL = "xpath://*[contains(@resource-id,'tvFareClass')][contains(@text,'{FARE_TYPE}')]",
+            NEXT_BUTTON = "id:btnNext";
 
 
 
@@ -37,6 +37,14 @@ public class FlightDetailsPageObject extends MainPageObject {
         return SELECT_FARE_TYPE_TPL.replace("{FARE_TYPE}", fare_type);
     }
     /*TEMPLATES METHODS */
+
+    public void searchFlights(String origin_city, String destination_city, Boolean OneWay) {
+        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+        ResultsPageObject ResultsPageObject = new ResultsPageObject(driver);
+
+        BookingPageObject.makeSimpleSearch(origin_city, destination_city, OneWay);
+        ResultsPageObject.checkSearchResults();
+    }
 
     public void selectSeatsClass(String seats_class){
         if (seats_class.equals("Эконом")){

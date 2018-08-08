@@ -2,7 +2,6 @@ package tests.Booking;
 
 import lib.CoreTestCase;
 import lib.ui.Booking.BookingPageObject;
-import lib.ui.MenuPageObject;
 import org.junit.Test;
 
 public class BookingTests extends CoreTestCase {
@@ -49,13 +48,13 @@ public class BookingTests extends CoreTestCase {
         BookingPageObject.swipeUpQuick();
         BookingPageObject.checkMaxPassengersQuantity();
     }
-    @Test
-    public void testOpenBookingRulesInfo(){
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
-        BookingPageObject.openBookingScreen();
-        BookingPageObject.swipeUpQuick();
-        BookingPageObject.openBookingRulesInfo();
-    }
+//    @Test
+//    public void testOpenBookingRulesInfo(){
+//        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+//        BookingPageObject.openBookingScreen();
+//        BookingPageObject.swipeUpQuick();
+//        BookingPageObject.openBookingRulesInfo();
+//    }
     @Test
     public void testSelectCountry(){
         BookingPageObject BookingPageObject = new BookingPageObject(driver);

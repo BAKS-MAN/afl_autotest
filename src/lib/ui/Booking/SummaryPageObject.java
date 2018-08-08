@@ -8,30 +8,30 @@ public class SummaryPageObject extends MainPageObject {
     public SummaryPageObject (AppiumDriver driver){super(driver);}
 
     protected static final String
-            BOOKING_SUMMARY_CONTENT = "id:ru.aeroflot.afltest:id/llBookingSummary",
-            FLIGHT_LAYOUT = "id:ru.aeroflot.afltest:id/tvFlightDirection",
-            FLIGHT_DATE = "id:ru.aeroflot.afltest:id/tvFlightDate",
-            FLIGHT_DEPARTURE_CITY = "id:ru.aeroflot.afltest:id/tvFlightFrom",
-            FLIGHT_ARRIVAL_CITY = "id:ru.aeroflot.afltest:id/tvFlightTo",
-            FLIGHT_DEPARTURE_TIME = "id:ru.aeroflot.afltest:id/tvFlightTime",
-            FLIGHT_INFO_DEPARTURE_TIME = "id:ru.aeroflot.afltest:id/tvTimeSource",
-            FLIGHT_INFO_DEPARTURE_CITY = "id:ru.aeroflot.afltest:id/tvCitySource",
-            FLIGHT_INFO_DEPARTURE_DATE = "id:ru.aeroflot.afltest:id/tvDateSource",
-            FLIGHT_INFO_ARRIVAL_TIME= "id:ru.aeroflot.afltest:id/tvTimeDest",
-            FLIGHT_INFO_ARRIVAL_CITY = "id:ru.aeroflot.afltest:id/tvCityDest",
-            FLIGHT_INFO_ARRIVAL_DATE = "id:ru.aeroflot.afltest:id/tvDateDest",
-            FLIGHT_INFO_DURATION = "id:ru.aeroflot.afltest:id/tvDuration",
-            PASSENGER_TYPE = "id:ru.aeroflot.afltest:id/tvPassengerHeader",
-            PASSENGER_NAME = "id:ru.aeroflot.afltest:id/tvPassengerName",
-            PASSENGER_BIRTH_DATE = "id:ru.aeroflot.afltest:id/tvPassengerBirthDate",
-            PASSENGER_PASSPORT_NUMBER = "id:ru.aeroflot.afltest:id/tvPassportNumber",
-            BOOKING_PHONE = "id:ru.aeroflot.afltest:id/tvPhone",
-            BOOKING_EMAIL = "id:ru.aeroflot.afltest:id/tvEmail",
-            SUMMARY_LAYOUT = "id:ru.aeroflot.afltest:id/booking_summary_fare_card_layout",
-            TOTAL_PRICE = "id:ru.aeroflot.afltest:id/tvTotalPrice",
-            BASE_PRICE = "id:ru.aeroflot.afltest:id/tvBasePrice",
-            TAXES_CHARGES = "id:ru.aeroflot.afltest:id/tvAdditional",
-            BOOK_BUTTON = "id:ru.aeroflot.afltest:id/btnBook";
+            BOOKING_SUMMARY_CONTENT = "id:llBookingSummary",
+            FLIGHT_LAYOUT = "id:tvFlightDirection",
+            FLIGHT_DATE = "id:tvFlightDate",
+            FLIGHT_DEPARTURE_CITY = "id:tvFlightFrom",
+            FLIGHT_ARRIVAL_CITY = "id:tvFlightTo",
+            FLIGHT_DEPARTURE_TIME = "id:tvFlightTime",
+            FLIGHT_INFO_DEPARTURE_TIME = "id:tvTimeSource",
+            FLIGHT_INFO_DEPARTURE_CITY = "id:tvCitySource",
+            FLIGHT_INFO_DEPARTURE_DATE = "id:tvDateSource",
+            FLIGHT_INFO_ARRIVAL_TIME= "id:tvTimeDest",
+            FLIGHT_INFO_ARRIVAL_CITY = "id:tvCityDest",
+            FLIGHT_INFO_ARRIVAL_DATE = "id:tvDateDest",
+            FLIGHT_INFO_DURATION = "id:tvDuration",
+            PASSENGER_TYPE = "id:tvPassengerHeader",
+            PASSENGER_NAME = "id:tvPassengerName",
+            PASSENGER_BIRTH_DATE = "id:tvPassengerBirthDate",
+            PASSENGER_PASSPORT_NUMBER = "id:tvPassportNumber",
+            BOOKING_PHONE = "id:tvPhone",
+            BOOKING_EMAIL = "id:tvEmail",
+            SUMMARY_LAYOUT = "id:booking_summary_fare_card_layout",
+            TOTAL_PRICE = "id:tvTotalPrice",
+            BASE_PRICE = "id:tvBasePrice",
+            TAXES_CHARGES = "id:tvAdditional",
+            BOOK_BUTTON = "id:btnBook";
 
     /*TEMPLATES METHODS */
 
@@ -63,31 +63,15 @@ public class SummaryPageObject extends MainPageObject {
         this.swipeUpToFindElement(SUMMARY_LAYOUT,"Не удалось добраться до информации об итоговой стоимости брони",5);
         waitForElementPresent(SUMMARY_LAYOUT,"Блок с информацией об итоговой стоимости не найден",3);
         waitForElementPresent(TOTAL_PRICE,"Отсутствует информация об итоговой стоимости",3);
-        waitForElementPresent(BASE_PRICE,"Отсутствует информация о базовом тарифе",3);
+        swipeUpToFindElement(BASE_PRICE,"Отсутствует информация о базовом тарифе",3);
         waitForElementPresent(TAXES_CHARGES,"Отсутствует информация о таксах и сборах",3);
         this.swipeUpQuick();
         waitForElementPresent(BOOK_BUTTON,"Не найдена кнопка бронирования",3);
     }
     public void goToSummaryScreen(String origin_city, String destination_city, Boolean OneWay){
-        MenuPageObject MenuPageObject = new MenuPageObject(driver);
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
-        FlightDetailsPageObject FlightDetailsPageObject = new FlightDetailsPageObject(driver);
         PassengersPageObject PassengersPageObject = new PassengersPageObject(driver);
 
-        MenuPageObject.openBookingScreen();
-        BookingPageObject.typeOriginCityAndSelect(origin_city);
-        BookingPageObject.typeDestinationCityAndSelect(destination_city);
-        if (OneWay){
-            BookingPageObject.setOneWayDate();
-        } else {
-            BookingPageObject.setDateFromAndTo();
-        }
-        BookingPageObject.swipeUpQuick();
-        BookingPageObject.startSearch();
-        FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
-        if (!OneWay){
-            FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
-        }
+        PassengersPageObject.searchWithOnePassenger(origin_city,destination_city,OneWay);
         PassengersPageObject.checkEditOnePassengerScreen();
         PassengersPageObject.editPassengerName("Petr");
         PassengersPageObject.editPassengerLastName("Test");

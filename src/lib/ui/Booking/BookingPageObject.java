@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import lib.ui.MainPageObject;
 import lib.ui.MenuPageObject;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -11,46 +12,46 @@ public class BookingPageObject extends MainPageObject {
     public BookingPageObject (AppiumDriver driver){super(driver);}
 
     protected static final String
-            BOOKING_SCREEN_TITLE = "xpath://*[@resource-id='ru.aeroflot.afltest:id/booking_toolbar']//*[@text='Купить билет']",
-            REGULAR_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab//*[@text='ОБЫЧНЫЙ ПОИСК']",
-//            REGULAR_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab//*[@text='Обычный поиск']",
-            MILE_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab//*[@text='ПОИСК ЗА МИЛИ']",
-//            MILE_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab//*[@text='Поиск за мили']",
-            CITY_ORIGIN_FIELD = "id:ru.aeroflot.afltest:id/tlAirportFrom",
-            CITY_ORIGIN_FIELD_TEXT = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/tlAirportFrom']//*[@resource-id = 'ru.aeroflot.afltest:id/tvFirstLineText']",
-            CITY_DESTINATION_FIELD = "id:ru.aeroflot.afltest:id/tlAirportTo",
-            CITY_DESTINATION_FIELD_TEXT = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/tlAirportTo']//*[@resource-id = 'ru.aeroflot.afltest:id/tvFirstLineText']",
-            CITY_SEARCH_FIELD = "id:ru.aeroflot.afltest:id/etSearch",
-            CITY_SEARCH_CLEAR = "id:ru.aeroflot.afltest:id/btnClear",
-            CITY_SEARCH_RESULT_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/tvFirstLineText'][@text = '{CITY}']",
-            SWAP_CITIES_BUTTON = "id:ru.aeroflot.afltest:id/btnSwapCities",
-            DIRECT_FLIGHTS_SWITCH = "id:ru.aeroflot.afltest:id/swOnlyDirectFlights",
-            DATE_FROM = "id:ru.aeroflot.afltest:id/rlDateFrom",
-            DATE_TO = "id:ru.aeroflot.afltest:id/tlDateTo",
+            BOOKING_SCREEN_TITLE = "xpath://*[@resource-id='booking_toolbar']//*[@text='Купить билет']",
+            REGULAR_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab[1]",
+            MILE_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab[2]",
+            CITY_ORIGIN_FIELD = "id:tlAirportFrom",
+//            CITY_ORIGIN_FIELD_TEXT = "xpath://*[contains(@resource-id,'tlAirportFrom')]//*[contains(@resource-id,'tvFirstLineText')]",
+            CITY_ORIGIN_FIELD_TEXT = "xpath://android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]",
+            CITY_DESTINATION_FIELD = "id:tlAirportTo",
+//            CITY_DESTINATION_FIELD_TEXT = "xpath://*[contains(@resource-id,'tlAirportTo')]//*[contains(@resource-id,'tvFirstLineText')]",
+            CITY_DESTINATION_FIELD_TEXT = "xpath://android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView[1]",
+            CITY_SEARCH_FIELD = "id:etSearch",
+            CITY_SEARCH_CLEAR = "id:btnClear",
+            CITY_SEARCH_RESULT_TPL = "xpath://*[@class = 'android.widget.TextView'][@text = '{CITY}']",
+            SWAP_CITIES_BUTTON = "id:btnSwapCities",
+            DIRECT_FLIGHTS_SWITCH = "id:swOnlyDirectFlights",
+            DATE_FROM = "id:rlDateFrom",
+            DATE_TO = "id:tlDateTo",
             CALENDAR_WINDOW = "xpath://com.prolificinteractive.materialcalendarview.CalendarPagerView[@content-desc='Calendar']",
             CALENDAR_NEXT_MONTH_SELECT = "xpath://android.widget.ImageView[@content-desc='Go to next']",
             CALENDAR_DAY_TPL = "xpath://com.prolificinteractive.materialcalendarview.CalendarPagerView[@content-desc='Calendar']//*[@text='{DAY}']",
-            CALENDAR_ONE_WAY_SWITCH = "id:ru.aeroflot.afltest:id/chbOneWay",
-            CALENDAR_SELECT_BUTTON = "id:ru.aeroflot.afltest:id/btnOk",
-            ADD_ITINERARY_SEGMENT_BUTTON = "id:ru.aeroflot.afltest:id/btnAddItinerarySegment",
-            DELETE_ITINERARY_SEGMENT_BUTTON = "id:ru.aeroflot.afltest:id/btnItineraryDelSegment",
-            ADD_ANOTHER_ITINERARY_SEGMENT_BUTTON = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/btnAddItinerarySegment'][@text = 'ДОБАВИТЬ ПЕРЕЛЁТ']",
-            PASSENGERS_INFO_BUTTON = "id:ru.aeroflot.afltest:id/btnPassengersInfo",
+            CALENDAR_ONE_WAY_SWITCH = "id:chbOneWay",
+            CALENDAR_SELECT_BUTTON = "id:btnOk",
+            ADD_ITINERARY_SEGMENT_BUTTON = "id:btnAddItinerarySegment",
+            DELETE_ITINERARY_SEGMENT_BUTTON = "id:btnItineraryDelSegment",
+            ADD_ANOTHER_ITINERARY_SEGMENT_BUTTON = "xpath://*[contains(@resource-id,'btnAddItinerarySegment')][@text = 'ДОБАВИТЬ ПЕРЕЛЁТ']",
+            PASSENGERS_INFO_BUTTON = "id:btnPassengersInfo",
             PASSENGERS_INFO_ALERT = "xpath://*[@resource-id = 'android:id/alertTitle'][@text = 'Пассажиры']",
-            SELECT_ADULT_PASSENGERS = "id:ru.aeroflot.afltest:id/btnAdult",
-            SELECT_CHILD_PASSENGERS = "id:ru.aeroflot.afltest:id/btnChild",
-            SELECT_INFANT_PASSENGERS = "id:ru.aeroflot.afltest:id/btnInfant",
-            PASSENGERS_SELECTOR_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/spinnerTarget'][@text = '{QUANTITY}']",
-            SELECT_COUNTRY_FIELD = "id:ru.aeroflot.afltest:id/spCountry",
+            SELECT_ADULT_PASSENGERS = "id:btnAdult",
+            SELECT_CHILD_PASSENGERS = "id:btnChild",
+            SELECT_INFANT_PASSENGERS = "id:btnInfant",
+            PASSENGERS_SELECTOR_TPL = "xpath://*[contains(@resource-id,'spinnerTarget')][@text = '{QUANTITY}']",
+            SELECT_COUNTRY_FIELD = "id:spCountry",
             SELECT_COUNTRY_LIST = "xpath://android.widget.ListView",
             SELECT_COUNTRY_BY_NAME_TPL = "xpath://*[@resource-id = 'android:id/text1'][@text = '{COUNTRY}']",
-            BOOKING_RULES_INFO_BUTTON = "id:ru.aeroflot.afltest:id/btnInfo",
+            BOOKING_RULES_INFO_BUTTON = "id:btnInfo",
             PERMISSION_ALLOW_WINDOW = "id:com.android.packageinstaller:id/perm_desc_root",
             PERMISSION_ALLOW_BUTTON = "id:com.android.packageinstaller:id/permission_allow_button",
-            BOOKING_RULES_TITLE = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/toolbar']//*[@text = 'Правила бронирования']",
-            PAYLATE_BANNER = "id:ru.aeroflot.afltest:id/llPaylate",
-            SEARCH_BUTTON = "id:ru.aeroflot.afltest:id/search",
-            PRICE_CALENDAR_BUTTON = "id:ru.aeroflot.afltest:id/priceCalendar";
+            BOOKING_RULES_TITLE = "xpath://*[contains(@resource-id,'toolbar')]//*[@text = 'Правила бронирования']",
+            PAYLATE_BANNER = "id:llPaylate",
+            SEARCH_BUTTON = "id:search",
+            PRICE_CALENDAR_BUTTON = "id:priceCalendar";
 
 
     /*TEMPLATES METHODS */
@@ -78,8 +79,8 @@ public class BookingPageObject extends MainPageObject {
     public void initBookingScreen(){
         this.waitForElementPresent(REGULAR_SEARCH_TAB,"Вкладка обычного поиска не обнаружена",2);
         this.waitForElementPresent(MILE_SEARCH_TAB,"Вкладка мильного поиска не обнаружена",2);
-        this.waitForElementPresent(CITY_ORIGIN_FIELD,"Вкладка мильного поиска не обнаружена",2);
-        this.waitForElementPresent(CITY_DESTINATION_FIELD,"Вкладка мильного поиска не обнаружена",2);
+        this.waitForElementPresent(CITY_ORIGIN_FIELD,"Поле выбора города отправления не найдено",2);
+        this.waitForElementPresent(CITY_DESTINATION_FIELD,"Поле выбора города прибытия не найдено",2);
         this.waitForElementPresent(SWAP_CITIES_BUTTON,"Кнопка смены направления не обнаружена",2);
         this.waitForElementPresent(DIRECT_FLIGHTS_SWITCH,"Переключатель напрвления в одну сторону не обнаружен",2);
         this.waitForElementPresent(DATE_FROM,"Поле выбора даты вылета не обнаружено",2);
@@ -94,6 +95,7 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementPresent(BOOKING_RULES_INFO_BUTTON,"Кнопка информации о правилах бронирования не обнаружена",2);
 //        this.waitForElementPresent(PAYLATE_BANNER,"Баннер приобретения билета в рассрочку не отображается",2);
         this.waitForElementPresent(SEARCH_BUTTON,"Кнопка поиска не обнаружена",2);
+        this.swipeDown(200);
     }
 
     public void openBookingScreen(){
@@ -164,7 +166,7 @@ public class BookingPageObject extends MainPageObject {
     public void selectFlightDay(Integer day){
         String flight_day = Integer.toString(day);
         String flight_day_xpath = getFlightDay(flight_day);
-        if (day >24){
+        if (day >24){   //Если дата более 24, то выбираем 5 число следующего месяца
             this.waitForElementAndClick(CALENDAR_NEXT_MONTH_SELECT,"Не найден элемент выбора следующего месяца",3);
             flight_day = "5";
             flight_day_xpath = getFlightDay(flight_day);
@@ -176,11 +178,11 @@ public class BookingPageObject extends MainPageObject {
     public void setDateFromAndTo(){
         this.waitForElementAndClick(DATE_FROM,"Поле выбора даты вылета не найдено",3);
         this.waitForElementPresent(CALENDAR_WINDOW,"Календарь выбора даты не отображается",3);
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        calendar.add(Calendar.DAY_OF_MONTH, 3);    //Задаем дату вылета равной текущая дата + 3
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        LocalDate date = LocalDate.now();
+        int day = date.getDayOfMonth();
+        day += 3; //Задаем дату вылета равной текущая дата + 3
         this.selectFlightDay(day);
-        day = day + 3;         //Задаем дату возвращения
+        day += 3; //Задаем дату возвращения +3 дня от даты вылета
         this.selectFlightDay(day);
         this.waitForElementAndClick(CALENDAR_SELECT_BUTTON,"Кнопка подтверждения даты не обнаружена",3);
     }
@@ -263,5 +265,18 @@ public class BookingPageObject extends MainPageObject {
     public void startSearch(){
         this.waitForElementAndClick(SEARCH_BUTTON,"Кнопка поиска не найдена",2);
         this.waitForElementPresent(PRICE_CALENDAR_BUTTON,"Не осуществлен переход на экран с результатами поиска",15);
+    }
+
+    public void makeSimpleSearch(String origin_city, String destination_city, Boolean OneWay){
+        this.openBookingScreen();
+        this.typeOriginCityAndSelect(origin_city);
+        this.typeDestinationCityAndSelect(destination_city);
+        if (OneWay){
+            this.setOneWayDate();
+        } else {
+            this.setDateFromAndTo();
+        }
+        this.swipeUpQuick();
+        this.startSearch();
     }
 }

@@ -2,47 +2,45 @@ package lib.ui.Booking;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MainPageObject;
-import lib.ui.MenuPageObject;
 
-import java.util.Calendar;
-import java.util.TimeZone;
+import java.time.LocalDate;
 
 public class PassengersPageObject extends MainPageObject {
     public PassengersPageObject(AppiumDriver driver){super(driver);}
 
     protected static final String
-            PASSENGERS_BLOCK = "id:ru.aeroflot.afltest:id/flPassengers",
+            PASSENGERS_BLOCK = "id:flPassengers",
             ALERT_TXT = "xpath://*[@resource-id = 'android:id/message'][contains(@text,'Отчество')]",
             ALERT_OK_BUTTON = "id:android:id/button1",
-            PASSENGER_TITLE = "id:ru.aeroflot.afltest:id/tvPassengerHeader",
-            PASSENGER_TITLE_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/tvPassengerHeader'][contains(@text,'{TYPE} {QUEUE_NUMBER}')]",
-            PASSENGER_NAME = "id:ru.aeroflot.afltest:id/tvPassengerName",
-            PASSENGER_BIRTH_DATE = "id:ru.aeroflot.afltest:id/tvPassengerBirthDate",
-            PHONE_FIELD = "id:ru.aeroflot.afltest:id/etPhone",
-            EMAIL_FIELD = "id:ru.aeroflot.afltest:id/etEmail",
-            FIRST_NAME_FIELD = "id:ru.aeroflot.afltest:id/tlFirstName",
-            LAST_NAME_FIELD = "id:ru.aeroflot.afltest:id/tlLastName",
-            MIDDLE_NAME_FIELD = "id:ru.aeroflot.afltest:id/tlMiddleName",
-            BIRTH_DATE_FIELD  = "id:ru.aeroflot.afltest:id/tlBorn",
+            PASSENGER_TITLE = "id:tvPassengerHeader",
+            PASSENGER_TITLE_TPL = "xpath://*[contains(@resource-id,'tvPassengerHeader')][contains(@text,'{TYPE} {QUEUE_NUMBER}')]",
+            PASSENGER_NAME = "id:tvPassengerName",
+            PASSENGER_BIRTH_DATE = "id:tvPassengerBirthDate",
+            PHONE_FIELD = "id:etPhone",
+            EMAIL_FIELD = "id:etEmail",
+            FIRST_NAME_FIELD = "id:tlFirstName",
+            LAST_NAME_FIELD = "id:tlLastName",
+            MIDDLE_NAME_FIELD = "id:tlMiddleName",
+            BIRTH_DATE_FIELD  = "id:tlBorn",
             DATE_WIDGET = "id:android:id/datePicker",
             DATE_WIDGET_YEAR_BUTTON = "id:android:id/date_picker_header_year",
             DATE_WIDGET_YEAR_PICKER = "id:android:id/date_picker_year_picker",
             DATE_WIDGET_DATE_PICKER_TPL = "xpath://*[@resource-id = 'android:id/month_view']//*[contains(@text,'{DAY}')]",
-            BIRTH_DATE_WIDGET_PREV_MONTH = "id:android:id/prev",
-            BIRTH_DATE_WIDGET_NEXT_MONTH = "id:android:id/next",
-            SEX_FIELD = "id:ru.aeroflot.afltest:id/spSex",
+            BIRTH_DATE_WIDGET_PREV_MONTH = "id:prev",
+            BIRTH_DATE_WIDGET_NEXT_MONTH = "id:next",
+            SEX_FIELD = "id:spSex",
             PICKER_SELECTOR_TPL = "xpath://*[@resource-id = 'android:id/text1'][@text = '{VALUE}']",
-            CITIZEN_FIELD = "id:ru.aeroflot.afltest:id/spCitizenship",
+            CITIZEN_FIELD = "id:spCitizenship",
             SELECT_COUNTRY_LIST = "xpath://android.widget.ListView",
-            PASSPORT_TYPE_FIELD = "id:ru.aeroflot.afltest:id/spPassportType",
-            PASSPORT_TYPE_PICKET_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/title'][@text = '{PASSPORT_TYPE}']",
-            PASSPORT_COUNTRY_FIELD = "id:ru.aeroflot.afltest:id/spPassportCountry",
-            PASSPORT_NUMBER_FIELD = "id:ru.aeroflot.afltest:id/tlPassportNumber",
-            PASSPORT_ISSUE_FIELD = "id:ru.aeroflot.afltest:id/tlPassportIssue",
-            LOYALTY_PARTNERS_FIELD = "id:ru.aeroflot.afltest:id/spPartners",
-            LOYALTY_NUMBER_FIELD = "id:ru.aeroflot.afltest:id/tlLoyalityNumber",
-            SAVE_BUTTON = "id:ru.aeroflot.afltest:id/btnSave",
-            NEXT_BUTTON = "id:ru.aeroflot.afltest:id/btnNext";
+            PASSPORT_TYPE_FIELD = "id:spPassportType",
+            PASSPORT_TYPE_PICKET_TPL = "xpath://*[contains(@resource-id,'title')][@text = '{PASSPORT_TYPE}']",
+            PASSPORT_COUNTRY_FIELD = "id:spPassportCountry",
+            PASSPORT_NUMBER_FIELD = "id:tlPassportNumber",
+            PASSPORT_ISSUE_FIELD = "id:tlPassportIssue",
+            LOYALTY_PARTNERS_FIELD = "id:spPartners",
+            LOYALTY_NUMBER_FIELD = "id:tlLoyalityNumber",
+            SAVE_BUTTON = "id:btnSave",
+            NEXT_BUTTON = "id:btnNext";
 
 
 
@@ -76,8 +74,7 @@ public class PassengersPageObject extends MainPageObject {
         if (this.isElementPresent(ALERT_TXT)){
             this.waitForElementAndClick(ALERT_OK_BUTTON,"Кнопка закрытия алерта не найдена",3);
         }
-//        this.waitForElementPresent(PASSENGERS_BLOCK,"Блок ввода информации о пассажирах не найден",2);
-        this.waitForElementPresent(FIRST_NAME_FIELD,"Поле ввода имени пассажира не найдено",5);
+        this.waitForElementPresent(FIRST_NAME_FIELD,"Поле ввода имени пассажира не найдено",2);
         this.waitForElementPresent(LAST_NAME_FIELD,"Поле ввода фамилии пассажира не найдено",2);
         this.waitForElementPresent(MIDDLE_NAME_FIELD,"Поле ввода отчества пассажира не найдено",2);
         this.waitForElementPresent(BIRTH_DATE_FIELD,"Поле ввода даты рождения пассажира не найдено",2);
@@ -105,21 +102,10 @@ public class PassengersPageObject extends MainPageObject {
 
 
 
-    public void SearchWithOnePassenger(String origin_city, String destination_city, Boolean OneWay){
-        MenuPageObject MenuPageObject = new MenuPageObject(driver);
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+    public void searchWithOnePassenger(String origin_city, String destination_city, Boolean OneWay){
         FlightDetailsPageObject FlightDetailsPageObject = new FlightDetailsPageObject(driver);
 
-        MenuPageObject.openBookingScreen();
-        BookingPageObject.typeOriginCityAndSelect(origin_city);
-        BookingPageObject.typeDestinationCityAndSelect(destination_city);
-        if (OneWay){
-            BookingPageObject.setOneWayDate();
-        } else {
-            BookingPageObject.setDateFromAndTo();
-        }
-        BookingPageObject.swipeUpQuick();
-        BookingPageObject.startSearch();
+        FlightDetailsPageObject.searchFlights(origin_city,destination_city,OneWay);
         FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
         if (!OneWay){
             FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
@@ -127,12 +113,12 @@ public class PassengersPageObject extends MainPageObject {
         this.checkEditOnePassengerScreen();
     }
 
-    public void SearchWithSeveralPassengers(String origin_city, String destination_city, Boolean OneWay){
-        MenuPageObject MenuPageObject = new MenuPageObject(driver);
+    public void searchWithSeveralPassengers(String origin_city, String destination_city, Boolean OneWay){
         BookingPageObject BookingPageObject = new BookingPageObject(driver);
+        ResultsPageObject ResultsPageObject = new ResultsPageObject (driver);
         FlightDetailsPageObject FlightDetailsPageObject = new FlightDetailsPageObject(driver);
 
-        MenuPageObject.openBookingScreen();
+        BookingPageObject.openBookingScreen();
         BookingPageObject.typeOriginCityAndSelect(origin_city);
         BookingPageObject.typeDestinationCityAndSelect(destination_city);
         if (OneWay){
@@ -145,6 +131,7 @@ public class PassengersPageObject extends MainPageObject {
         BookingPageObject.selectChildPassengers("1");
         BookingPageObject.selectInfantPassengers("1");
         BookingPageObject.startSearch();
+        ResultsPageObject.checkSearchResults();
         FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
         if (!OneWay){
             FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
@@ -164,8 +151,8 @@ public class PassengersPageObject extends MainPageObject {
         this.waitForElementAndClick(DATE_WIDGET_YEAR_BUTTON,"Элемент выбора года не найден",2);
         String birth_date_year_xpath = getPickerElement(passenger_birth_year);
         this.scrollUpToElementFromList(DATE_WIDGET_YEAR_PICKER,birth_date_year_xpath,10);
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        String day = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
+        LocalDate date = LocalDate.now();
+        String day = Integer.toString(date.getDayOfMonth());
         String birth_date_day_xpath = getDatePickerDay(day);
         this.waitForElementAndClick(birth_date_day_xpath,"Не обнаружена дата для выбора",3);
         this.waitForElementAndClick(ALERT_OK_BUTTON,"Кнопка закрытия виджета не найдена",3);
@@ -201,8 +188,8 @@ public class PassengersPageObject extends MainPageObject {
         this.waitForElementAndClick(DATE_WIDGET_YEAR_BUTTON,"Элемент выбора года не найден",2);
         String issue_year_xpath = getPickerElement(passport_issue_date);
         this.scrollDownToElementFromList(DATE_WIDGET_YEAR_PICKER,issue_year_xpath,10);
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        String day = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
+        LocalDate date = LocalDate.now();
+        String day = Integer.toString(date.getDayOfMonth());
         String issue_day_xpath = getDatePickerDay(day);
         this.waitForElementAndClick(issue_day_xpath,"Не обнаружена дата для выбора",3);
         this.waitForElementAndClick(ALERT_OK_BUTTON,"Кнопка закрытия виджета не найдена",3);

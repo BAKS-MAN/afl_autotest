@@ -4,19 +4,59 @@
     <list default="true" id="f6f219ff-2b42-4537-ae3c-d517f38fb5a2" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1805741252">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="16" />
+          <entry key="project.open.time.12" value="2" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="16" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="65" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="65" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="1292" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1292" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainPageObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+            <state relative-caret-position="170">
+              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -24,11 +64,50 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummaryTests.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/Booking/ResultsScreenTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/Booking/FlightDetailsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests/Booking/PassengersTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/Booking/SummaryTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaymentTests.java" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tests/Booking/PaymentTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="357">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,23 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SummaryPageObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/SummaryPageObject.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-552">
-              <caret line="29" column="90" lean-forward="true" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PaymentPageObject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/PaymentPageObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="64" column="63" lean-forward="true" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
+            <state relative-caret-position="34">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,15 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>в ону</find>
-      <find>ru.aeroflot.afltest:id/btnAddItinerarySegment</find>
-      <find>System.out.println</find>
-      <find>bool</find>
-      <find>findElements</find>
-      <find>size</find>
-      <find>ass</find>
-      <find>tvT</find>
-      <find>rvSearchResults</find>
       <find>ru.aeroflot.afltest:id/tvCity</find>
       <find>ru.aeroflot.afltest:id/tvCityCode</find>
       <find>tvFirstLineText</find>
@@ -110,6 +168,18 @@
       <find>tran</find>
       <find>CitySource</find>
       <find>FLIGHT_LAYOUT</find>
+      <find>title</find>
+      <find>test</find>
+      <find>AirportDest</find>
+      <find>Поле выбора города отправления не найдено</find>
+      <find>tlAirportFrom']//*[@resource-id = 'tvFirstLine</find>
+      <find>xpath</find>
+      <find>afltest</find>
+      <find>Блок с информацией о перелете не найден</find>
+      <find>Суммарная информация о бронировании не обнаружена</find>
+      <find>Отсутствует информация о базовом тарифе</find>
+      <find>calen</find>
+      <find>day</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -117,33 +187,39 @@
       <list>
         <option value="$PROJECT_DIR$/src/lib/ui/BookingPageObject.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/LoginPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MenuPageObject.java" />
         <option value="$PROJECT_DIR$/src/tests/BookingTests.java" />
         <option value="$PROJECT_DIR$/src/tests/ResultsScreenTest.java" />
         <option value="$PROJECT_DIR$/src/lib/ui/Booking/FlightDetailsObject.java" />
         <option value="$PROJECT_DIR$/src/tests/FlightDetailsTest.java" />
         <option value="$PROJECT_DIR$/src/tests/PassengersTestst.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/ResultsPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/FlightDetailsPageObject.java" />
         <option value="$PROJECT_DIR$/src/tests/PassengersTests.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/PassengersPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
         <option value="$PROJECT_DIR$/src/tests/PaymentTests.java" />
         <option value="$PROJECT_DIR$/src/tests/SummaryTests.java" />
         <option value="$PROJECT_DIR$/src/tests/Booking/SummaryTests.java" />
         <option value="$PROJECT_DIR$/src/tests/Booking/PaymentTests.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/SummaryPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/PaymentPageObject.java" />
-        <option value="$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java" />
-        <option value="$PROJECT_DIR$/src/tests/Booking/BookingTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MenuPageObject.java" />
+        <option value="$PROJECT_DIR$/src/tests/Reservation/ReservationTests.java" />
+        <option value="$PROJECT_DIR$/src/tests/Reservation/ReservationInfoTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Reservation/ReservationPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Reservation/ReservationInfoPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/MainPageObject.java" />
+        <option value="$PROJECT_DIR$/src/tests/Booking/ResultsScreenTest.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/ResultsPageObject.java" />
+        <option value="$PROJECT_DIR$/src/tests/Booking/FlightDetailsTest.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/FlightDetailsPageObject.java" />
         <option value="$PROJECT_DIR$/src/tests/Booking/PassengersTests.java" />
+        <option value="$PROJECT_DIR$/src/tests/Booking/BookingTests.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/PaymentPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/SummaryPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/PassengersPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java" />
+        <option value="$PROJECT_DIR$/src/lib/CoreTestCase.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="358" />
-    <option name="y" value="173" />
+    <option name="x" value="126" />
+    <option name="y" value="102" />
     <option name="width" value="1550" />
     <option name="height" value="917" />
   </component>
@@ -153,17 +229,14 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
               <item name="Aeroflot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Aeroflot" type="462c0819:PsiDirectoryNode" />
-              <item name="apks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
@@ -200,6 +273,14 @@
               <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
               <item name="Aeroflot" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="Reservation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aeroflot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -209,17 +290,23 @@
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="Booking" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Aeroflot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Aeroflot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Reservation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533131262482" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/selenium-server-standalone-3.4.0.jar!/" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -236,9 +323,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PassengersTests.testEditPassengerData">
+  <component name="RunManager" selected="JUnit.BookingTests.testSelectCountry">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="BookingTests.testSelectCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Afl_AutoTest" />
@@ -248,22 +338,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests.Booking" />
       <option name="MAIN_CLASS_NAME" value="tests.Booking.BookingTests" />
       <option name="METHOD_NAME" value="testSelectCountry" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PassengersTests.testEditPassengerData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaymentTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Afl_AutoTest" />
       <extension name="coverage">
         <pattern>
@@ -271,22 +355,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests.Booking" />
-      <option name="MAIN_CLASS_NAME" value="tests.Booking.PassengersTests" />
-      <option name="METHOD_NAME" value="testEditPassengerData" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
+      <option name="MAIN_CLASS_NAME" value="tests.Booking.PaymentTests" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PassengersTests.testEditSeveralPassengersData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaymentTests.testPayForBooking" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Afl_AutoTest" />
       <extension name="coverage">
         <pattern>
@@ -294,22 +370,16 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests.Booking" />
-      <option name="MAIN_CLASS_NAME" value="tests.Booking.PassengersTests" />
-      <option name="METHOD_NAME" value="testEditSeveralPassengersData" />
+      <option name="MAIN_CLASS_NAME" value="tests.Booking.PaymentTests" />
+      <option name="METHOD_NAME" value="testPayForBooking" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PassengersTests.testSearchWithSeveralPassengers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PaymentTests.testSelectGiftCertificate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Afl_AutoTest" />
       <extension name="coverage">
         <pattern>
@@ -317,20 +387,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests.Booking" />
-      <option name="MAIN_CLASS_NAME" value="tests.Booking.PassengersTests" />
-      <option name="METHOD_NAME" value="testSearchWithSeveralPassengers" />
+      <option name="MAIN_CLASS_NAME" value="tests.Booking.PaymentTests" />
+      <option name="METHOD_NAME" value="testSelectGiftCertificate" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SummaryTests.testCheckSummaryScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Afl_AutoTest" />
@@ -340,73 +404,43 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tests.Booking" />
       <option name="MAIN_CLASS_NAME" value="tests.Booking.SummaryTests" />
       <option name="METHOD_NAME" value="testCheckSummaryScreen" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PassengersTests.testSearchWithSeveralPassengers" />
-      <item itemvalue="JUnit.PassengersTests.testEditPassengerData" />
-      <item itemvalue="JUnit.BookingTests.testSelectCountry" />
-      <item itemvalue="JUnit.PassengersTests.testEditSeveralPassengersData" />
       <item itemvalue="JUnit.SummaryTests.testCheckSummaryScreen" />
+      <item itemvalue="JUnit.PaymentTests" />
+      <item itemvalue="JUnit.PaymentTests.testPayForBooking" />
+      <item itemvalue="JUnit.PaymentTests.testSelectGiftCertificate" />
+      <item itemvalue="JUnit.BookingTests.testSelectCountry" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PassengersTests.testEditPassengerData" />
-        <item itemvalue="JUnit.SummaryTests.testCheckSummaryScreen" />
-        <item itemvalue="JUnit.PassengersTests.testEditSeveralPassengersData" />
         <item itemvalue="JUnit.BookingTests.testSelectCountry" />
-        <item itemvalue="JUnit.PassengersTests.testSearchWithSeveralPassengers" />
+        <item itemvalue="JUnit.PaymentTests.testSelectGiftCertificate" />
+        <item itemvalue="JUnit.PaymentTests" />
+        <item itemvalue="JUnit.PaymentTests.testPayForBooking" />
+        <item itemvalue="JUnit.SummaryTests.testCheckSummaryScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -424,302 +458,73 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PassengersTests_testEditSeveralPassengersData - 2018.07.24 at 00h 47m 30s.xml">
-      <configuration name="PassengersTests.testEditSeveralPassengersData" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testPayForBooking - 2018.07.31 at 16h 13m 04s.xml">
+      <configuration name="PaymentTests.testPayForBooking" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PassengersTests_testEditSeveralPassengersData - 2018.07.24 at 00h 50m 24s.xml">
-      <configuration name="PassengersTests.testEditSeveralPassengersData" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testPayForBooking - 2018.07.31 at 16h 28m 32s.xml">
+      <configuration name="PaymentTests.testPayForBooking" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PassengersTests_testEditSeveralPassengersData - 2018.07.24 at 00h 56m 09s.xml">
-      <configuration name="PassengersTests.testEditSeveralPassengersData" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testPayForBooking - 2018.07.31 at 16h 42m 03s.xml">
+      <configuration name="PaymentTests.testPayForBooking" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SummaryTests_testGoToPaymentScreen - 2018.07.24 at 20h 52m 40s.xml">
-      <configuration name="SummaryTests.testGoToPaymentScreen" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testSelectGiftCertificate - 2018.07.31 at 17h 00m 34s.xml">
+      <configuration name="PaymentTests.testSelectGiftCertificate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SummaryTests_testGoToPaymentScreen - 2018.07.24 at 20h 56m 11s.xml">
-      <configuration name="SummaryTests.testGoToPaymentScreen" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testSelectGiftCertificate - 2018.07.31 at 17h 01m 08s.xml">
+      <configuration name="PaymentTests.testSelectGiftCertificate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SummaryTests_testGoToPaymentScreen - 2018.07.24 at 20h 58m 50s.xml">
-      <configuration name="SummaryTests.testGoToPaymentScreen" configurationId="JUnit" />
+    <history-entry file="PaymentTests - 2018.07.31 at 18h 19m 49s.xml">
+      <configuration name="PaymentTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SummaryTests_testGoToPaymentScreen - 2018.07.24 at 21h 03m 55s.xml">
-      <configuration name="SummaryTests.testGoToPaymentScreen" configurationId="JUnit" />
+    <history-entry file="PaymentTests - 2018.07.31 at 18h 20m 54s.xml">
+      <configuration name="PaymentTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PassengersTests_testEditPassengerData - 2018.07.24 at 21h 16m 20s.xml">
-      <configuration name="PassengersTests.testEditPassengerData" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testSelectGiftCertificate - 2018.07.31 at 18h 32m 08s.xml">
+      <configuration name="PaymentTests.testSelectGiftCertificate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PassengersTests_testEditPassengerData - 2018.07.24 at 21h 17m 34s.xml">
-      <configuration name="PassengersTests.testEditPassengerData" configurationId="JUnit" />
+    <history-entry file="PaymentTests_testSelectGiftCertificate - 2018.07.31 at 18h 37m 47s.xml">
+      <configuration name="PaymentTests.testSelectGiftCertificate" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PassengersTests_testEditPassengerData - 2018.07.24 at 21h 21m 42s.xml">
-      <configuration name="PassengersTests.testEditPassengerData" configurationId="JUnit" />
+    <history-entry file="BookingTests_testSelectCountry - 2018.08.01 at 16h 47m 39s.xml">
+      <configuration name="BookingTests.testSelectCountry" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23910733" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.159375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23560767" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23861171" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32943678" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="31" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="29" column="31" lean-forward="true" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="99" selection-start-line="26" selection-start-column="8" selection-end-line="27" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1666">
-          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="56" lean-forward="true" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="74" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="74" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib.java" />
     <entry file="file://$PROJECT_DIR$/src/lib/ui/LoginPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -736,133 +541,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/Reservation/ReservationInfoTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/PaymentTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="98" column="16" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
-          <folding>
-            <element signature="e#4585#4586#0" expanded="true" />
-            <element signature="e#4652#4653#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/ui/MenuPageObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        <state relative-caret-position="320">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Reservation/ReservationInfoPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Reservation/ReservationPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/FlightDetailsPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/ResultsPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="61" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Reservation/ReservationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/SummaryPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1028">
+          <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/PaymentPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/PassengersPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="150" column="92" selection-start-line="150" selection-start-column="92" selection-end-line="150" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/MainPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/Booking/BookingTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/BookingPageObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Booking/ResultsScreenTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/ResultsPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/FlightDetailsPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="60" column="104" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Booking/FlightDetailsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="323">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Booking/PassengersTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/PassengersPageObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="218" column="27" lean-forward="true" selection-start-line="218" selection-start-column="27" selection-end-line="218" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/Booking/SummaryTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/SummaryPageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/tests/Booking/PaymentTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552">
-          <caret line="29" column="90" lean-forward="true" selection-start-line="29" selection-start-column="90" selection-end-line="29" selection-end-column="90" />
+        <state relative-caret-position="357">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/ui/Booking/PaymentPageObject.java">
+    <entry file="file://$PROJECT_DIR$/src/lib/CoreTestCase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="64" column="63" lean-forward="true" selection-start-line="64" selection-start-column="63" selection-end-line="64" selection-end-column="63" />
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -926,7 +746,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -934,7 +753,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>java-client-4.1.2</last-edited>
+          <last-edited>junit-4.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -10,42 +10,42 @@ public class PaymentPageObject extends MainPageObject {
     protected static final String
             ALERT_TITLE = "id:android:id/alertTitle",
             ALERT_OK_BUTTON = "id:android:id/button1",
-            PAYMENT_SCREEN_CONTENT = "id:ru.aeroflot.afltest:id/payment_fragment_container",
-            FLIGHT_LAYOUT = "id:ru.aeroflot.afltest:id/booking_payment_flights_layout",
-            FLIGHT_DATE = "id:ru.aeroflot.afltest:id/tvFlightDate",
-            FLIGHT_DEPARTURE_CITY = "id:ru.aeroflot.afltest:id/tvFlightFrom",
-            FLIGHT_ARRIVAL_CITY = "id:ru.aeroflot.afltest:id/tvFlightTo",
-            FLIGHT_DEPARTURE_TIME = "id:ru.aeroflot.afltest:id/tvFlightTime",
-            FLIGHT_INFO_DEPARTURE_TIME = "id:ru.aeroflot.afltest:id/tvTimeSource",
-            FLIGHT_INFO_DEPARTURE_CITY = "id:ru.aeroflot.afltest:id/tvCitySource",
-            FLIGHT_INFO_DEPARTURE_DATE = "id:ru.aeroflot.afltest:id/tvDateSource",
-            FLIGHT_INFO_ARRIVAL_TIME= "id:ru.aeroflot.afltest:id/tvTimeDest",
-            FLIGHT_INFO_ARRIVAL_CITY = "id:ru.aeroflot.afltest:id/tvCityDest",
-            FLIGHT_INFO_ARRIVAL_DATE = "id:ru.aeroflot.afltest:id/tvDateDest",
-            FLIGHT_INFO_DURATION = "id:ru.aeroflot.afltest:id/tvDuration",
-            SUMMARY_LAYOUT = "id:ru.aeroflot.afltest:id/booking_summary_fare_card_layout",
-            TOTAL_PRICE = "id:ru.aeroflot.afltest:id/tvTotalPrice",
-            BASE_PRICE = "id:ru.aeroflot.afltest:id/tvBasePrice",
-            TAXES_CHARGES = "id:ru.aeroflot.afltest:id/tvAdditional",
-            BOOKING_CODE = "id:ru.aeroflot.afltest:id/tvBookingCode",  //Text = Код бронирования: LKJPDE
-            INSURANCE_LAYOUT = "id:ru.aeroflot.afltest:id/llInsurance",
-            INSURANCE_DESCRIPTION_BUTTON = "id:ru.aeroflot.afltest:id/btnInsuranceDescription",
-            INSURANCE_COST = "id:ru.aeroflot.afltest:id/tvInsuranceCost",
-            INSURANCE_SWITCH = "id:ru.aeroflot.afltest:id/swInsuranceInOrder",
-            INSURANCE_CONDITIONS_LINK = "id:ru.aeroflot.afltest:id/tvInsuranceConditions",
-            INSURANCE_RULES_LINK = "id:ru.aeroflot.afltest:id/tvInsuranceRules",
-            PAYMENT_SELECTOR = "id:ru.aeroflot.afltest:id/payment_instruments_spinner",
-            PAYMENT_SELECTOR_TPL = "xpath://*[@resource-id = 'ru.aeroflot.afltest:id/text1'][@text = '{PAYMENT_METHOD}']",
-            CARD_NUMBER_FIELD = "id:ru.aeroflot.afltest:id/payment_pan_input",
-            CARD_HOLDER_FIELD = "id:ru.aeroflot.afltest:id/payment_cardholder_input",
-            CARD_EXPIRY_FIELD = "id:ru.aeroflot.afltest:id/payment_expiry_input",
-            CARD_CVC_FIELD = "id:ru.aeroflot.afltest:id/payment_cvc_input",
-            VGC_NUMBER_FIELD = "id:ru.aeroflot.afltest:id/payment_vgc_number",
-            VGC_CODE_FIELD = "id:ru.aeroflot.afltest:id/payment_vgc_code",
-            VGC_CHECK_BUTTON = "id:ru.aeroflot.afltest:id/payment_vgc_btn_check",
-            VGC_RESET_BUTTON = "id:ru.aeroflot.afltest:id/payment_vgc_btn_reset",
-            GO_TO_SITE_BUTTON = "id:ru.aeroflot.afltest:id/tvPaymentButtonsGoToSite",
-            PAY_BUTTON = "id:ru.aeroflot.afltest:id/payment_pay_btn";
+            PAYMENT_SCREEN_CONTENT = "id:payment_fragment_container",
+            FLIGHT_LAYOUT = "id:booking_payment_flights_layout",
+            FLIGHT_DATE = "id:tvFlightDate",
+            FLIGHT_DEPARTURE_CITY = "id:tvFlightFrom",
+            FLIGHT_ARRIVAL_CITY = "id:tvFlightTo",
+            FLIGHT_DEPARTURE_TIME = "id:tvFlightTime",
+            FLIGHT_INFO_DEPARTURE_TIME = "id:tvTimeSource",
+            FLIGHT_INFO_DEPARTURE_CITY = "id:tvCitySource",
+            FLIGHT_INFO_DEPARTURE_DATE = "id:tvDateSource",
+            FLIGHT_INFO_ARRIVAL_TIME= "id:tvTimeDest",
+            FLIGHT_INFO_ARRIVAL_CITY = "id:tvCityDest",
+            FLIGHT_INFO_ARRIVAL_DATE = "id:tvDateDest",
+            FLIGHT_INFO_DURATION = "id:tvDuration",
+            SUMMARY_LAYOUT = "id:booking_summary_fare_card_layout",
+            TOTAL_PRICE = "id:tvTotalPrice",
+            BASE_PRICE = "id:tvBasePrice",
+            TAXES_CHARGES = "id:tvAdditional",
+            BOOKING_CODE = "id:tvBookingCode",
+            INSURANCE_LAYOUT = "id:llInsurance",
+            INSURANCE_DESCRIPTION_BUTTON = "id:btnInsuranceDescription",
+            INSURANCE_COST = "id:tvInsuranceCost",
+            INSURANCE_SWITCH = "id:swInsuranceInOrder",
+            INSURANCE_CONDITIONS_LINK = "id:tvInsuranceConditions",
+            INSURANCE_RULES_LINK = "id:tvInsuranceRules",
+            PAYMENT_SELECTOR = "id:payment_instruments_spinner",
+            PAYMENT_SELECTOR_TPL = "xpath://*[contains(@resource-id,'text1')][@text = '{PAYMENT_METHOD}']",
+            CARD_NUMBER_FIELD = "id:payment_pan_input",
+            CARD_HOLDER_FIELD = "id:payment_cardholder_input",
+            CARD_EXPIRY_FIELD = "id:payment_expiry_input",
+            CARD_CVC_FIELD = "id:payment_cvc_input",
+            VGC_NUMBER_FIELD = "id:payment_vgc_number",
+            VGC_CODE_FIELD = "id:payment_vgc_code",
+            VGC_CHECK_BUTTON = "id:payment_vgc_btn_check",
+            VGC_RESET_BUTTON = "id:payment_vgc_btn_reset",
+            GO_TO_SITE_BUTTON = "id:tvPaymentButtonsGoToSite",
+            PAY_BUTTON = "id:payment_pay_btn";
 
     /*TEMPLATES METHODS */
     private static String getPaymentMethod(String payment_method){
@@ -79,7 +79,7 @@ public class PaymentPageObject extends MainPageObject {
         waitForElementPresent(FLIGHT_INFO_DURATION,"Отсутствует информация о продолжительности полета",3);
         waitForElementPresent(SUMMARY_LAYOUT,"Блок с информацией об итоговой стоимости не найден",3);
         waitForElementPresent(TOTAL_PRICE,"Отсутствует информация об итоговой стоимости",3);
-        waitForElementPresent(BASE_PRICE,"Отсутствует информация о базовом тарифе",3);
+        swipeUpToFindElement(BASE_PRICE,"Отсутствует информация о базовом тарифе",3);
         waitForElementPresent(TAXES_CHARGES,"Отсутствует информация о таксах и сборах",3);
         waitForElementPresent(BOOKING_CODE,"Отсутствует информация о полученном коде бронирования",3);
         waitForElementPresent(INSURANCE_LAYOUT,"Отсутствует информация о полетной страховке",3);
@@ -98,40 +98,9 @@ public class PaymentPageObject extends MainPageObject {
         waitForElementPresent(PAY_BUTTON,"Не найдена кнопка оплаты бронирования",3);
     }
     public void goToPaymentScreen(String origin_city, String destination_city, Boolean OneWay){
-        MenuPageObject MenuPageObject = new MenuPageObject(driver);
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
-        FlightDetailsPageObject FlightDetailsPageObject = new FlightDetailsPageObject(driver);
-        PassengersPageObject PassengersPageObject = new PassengersPageObject(driver);
         SummaryPageObject SummaryPageObject = new SummaryPageObject(driver);
 
-        MenuPageObject.openBookingScreen();
-        BookingPageObject.typeOriginCityAndSelect(origin_city);
-        BookingPageObject.typeDestinationCityAndSelect(destination_city);
-        if (OneWay){
-            BookingPageObject.setOneWayDate();
-        } else {
-            BookingPageObject.setDateFromAndTo();
-        }
-        BookingPageObject.swipeUpQuick();
-        BookingPageObject.startSearch();
-        FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
-        if (!OneWay){
-            FlightDetailsPageObject.selectSeatsClassAndFareType("Эконом","Премиум");
-        }
-        PassengersPageObject.checkEditOnePassengerScreen();
-        PassengersPageObject.editPassengerName("Petr");
-        PassengersPageObject.editPassengerLastName("Test");
-        PassengersPageObject.editPassengerBirthDate("1987");
-        PassengersPageObject.editPassengerSex("Мужской");
-        PassengersPageObject.selectCitizenCountry("Россия");
-        PassengersPageObject.selectPassportType("Заграничный паспорт");
-        PassengersPageObject.selectPassportCountry("Россия");
-        PassengersPageObject.editPassportNumber("5004698547");
-        PassengersPageObject.editPassportIssueDate("2022");
-        PassengersPageObject.editPhoneNumber("790412365789");
-        PassengersPageObject.editEmailAddress("test@test.com");
-        PassengersPageObject.pressNextButton();
-        SummaryPageObject.checkBookingSummaryScreen();
+        SummaryPageObject.goToSummaryScreen(origin_city,destination_city,OneWay);
         SummaryPageObject.pressBookButton();
         this.checkPaymentScreen();
     }
