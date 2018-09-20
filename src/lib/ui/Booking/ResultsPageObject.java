@@ -22,8 +22,8 @@ public class ResultsPageObject extends MainPageObject {
             SEARCH_ALTERNATIVES_BUTTON = "id:btnSearchAlternatives",
             ALTERNATIVES_RESULTS = "id:rvSearchAlternativeResults",
             ALTERNATIVES_RESULT_CITY_CODE = "id:tvCityCode",
-            CHANGE_ROUTE_ALERT = "xpath://*[contains(@resource-id,'tvTitle')][@text = 'Маршрут будет изменен']",
-            CHANGE_ROUTE_DESTINATION_CITY_TPL = "xpath://*[contains(@resource-id,'tvCityCode2')][@text = '{DESTINATION_CITY}']",
+            CHANGE_ROUTE_ALERT = "xpath://*[contains(@resource-id,'tvTitle')][contains(@text,'Маршрут будет изменен')]",
+            CHANGE_ROUTE_DESTINATION_CITY_TPL = "xpath://*[contains(@resource-id,'tvDescription')][contains(@text,'{DESTINATION_CITY}')]",
             CHANGE_ROUTE_CANCEL_BUTTON = "id:btnCancel",
             CHANGE_ROUTE_CONTINUE_BUTTON = "id:btnContinue",
             PRICE_CALENDAR_BUTTON = "id:priceCalendar",
@@ -73,8 +73,8 @@ public class ResultsPageObject extends MainPageObject {
         this.waitForElementAndClick(CHANGE_ROUTE_CANCEL_BUTTON,"Кнопка отмены не найдена",3);
         String new_destination = getElementText(ALTERNATIVES_RESULT_CITY_CODE);
         String alt_destination_xpath = getAlternativeDestinationCityByCode(new_destination);
-        this.waitForElementAndClick(ALTERNATIVES_RESULT_CITY_CODE, "Не удалось найти альтернативный маршрут для выбора", 7);
-        this.waitForElementPresent(alt_destination_xpath,"Код города прилета не совпадает с выбранным: '"+new_destination+"'",3);
+        this.waitForElementAndClick(ALTERNATIVES_RESULT_CITY_CODE, "Не удалось выбрать альтернативный маршрут", 7);
+        this.waitForElementPresent(alt_destination_xpath,"В окне подтверждения код города прилета не совпадает с выбранным: '"+new_destination+"'",3);
         this.waitForElementAndClick(CHANGE_ROUTE_CONTINUE_BUTTON,"Кнопка подтверждения изменения маршрута не найдена",3);
         this.waitForElementPresent(SEARCH_RESULTS_LIST,"Блок с результатами поиска не найден",7);
         String destination_xpath = getDestinationCityByCode(new_destination);

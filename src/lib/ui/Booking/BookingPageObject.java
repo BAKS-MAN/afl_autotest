@@ -24,7 +24,7 @@ public class BookingPageObject extends MainPageObject {
             CITY_SEARCH_FIELD = "id:etSearch",
             CITY_SEARCH_CLEAR = "id:btnClear",
             CITY_SEARCH_RESULT_TPL = "xpath://*[@class = 'android.widget.TextView'][@text = '{CITY}']",
-            SWAP_CITIES_BUTTON = "id:btnSwapCities",
+            SWAP_CITIES_BUTTON = "id:fabSwapCities",
             DIRECT_FLIGHTS_SWITCH = "id:swOnlyDirectFlights",
             DATE_FROM = "id:rlDateFrom",
             DATE_TO = "id:tlDateTo",
@@ -35,7 +35,6 @@ public class BookingPageObject extends MainPageObject {
             CALENDAR_SELECT_BUTTON = "id:btnOk",
             ADD_ITINERARY_SEGMENT_BUTTON = "id:btnAddItinerarySegment",
             DELETE_ITINERARY_SEGMENT_BUTTON = "id:btnItineraryDelSegment",
-            ADD_ANOTHER_ITINERARY_SEGMENT_BUTTON = "xpath://*[contains(@resource-id,'btnAddItinerarySegment')][@text = 'ДОБАВИТЬ ПЕРЕЛЁТ']",
             PASSENGERS_INFO_BUTTON = "id:btnPassengersInfo",
             PASSENGERS_INFO_ALERT = "xpath://*[@resource-id = 'android:id/alertTitle'][@text = 'Пассажиры']",
             SELECT_ADULT_PASSENGERS = "id:btnAdult",
@@ -45,7 +44,9 @@ public class BookingPageObject extends MainPageObject {
             SELECT_COUNTRY_FIELD = "id:spCountry",
             SELECT_COUNTRY_LIST = "xpath://android.widget.ListView",
             SELECT_COUNTRY_BY_NAME_TPL = "xpath://*[@resource-id = 'android:id/text1'][@text = '{COUNTRY}']",
-            BOOKING_RULES_INFO_BUTTON = "id:btnInfo",
+            BOOKING_COUPON_FIELD = "id:etCoupon",
+            BOOKING_COUPON_BUTTON = "id:btnInfo",
+            BOOKING_RULES_INFO_BUTTON = "id:btnDiscountOrDeleteCoupon",
             PERMISSION_ALLOW_WINDOW = "id:com.android.packageinstaller:id/perm_desc_root",
             PERMISSION_ALLOW_BUTTON = "id:com.android.packageinstaller:id/permission_allow_button",
             BOOKING_RULES_TITLE = "xpath://*[contains(@resource-id,'toolbar')]//*[@text = 'Правила бронирования']",
@@ -86,14 +87,16 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementPresent(DATE_FROM,"Поле выбора даты вылета не обнаружено",2);
         this.waitForElementPresent(DATE_TO,"Поле выбора даты прилета не обнаружено",2);
         this.waitForElementPresent(ADD_ITINERARY_SEGMENT_BUTTON,"Кнопка добавления сложного маршрута не обнаружена",2);
+        this.swipeUpToFindElement(PASSENGERS_INFO_BUTTON,"Кнопка информации о пассажирах не обнаружена",2);
         this.swipeUpQuick();
-        this.waitForElementPresent(PASSENGERS_INFO_BUTTON,"Кнопка информации о пассажирах не обнаружена",2);
         this.waitForElementPresent(SELECT_ADULT_PASSENGERS,"Поле выбора взрослого пассажира не обнаружено",2);
         this.waitForElementPresent(SELECT_CHILD_PASSENGERS,"Поле выбора пассажира ребенка не обнаружено",2);
         this.waitForElementPresent(SELECT_INFANT_PASSENGERS,"Поле выбора пассажира младенца не обнаружено",2);
         this.waitForElementPresent(SELECT_COUNTRY_FIELD,"Поле выбора страны не обнаружено",2);
+        this.waitForElementPresent(BOOKING_COUPON_FIELD,"Поле ввода купона не обнаружено",2);
+        this.waitForElementPresent(BOOKING_COUPON_BUTTON,"Кнопка добавления/удаления купона не обнаружена",2);
         this.waitForElementPresent(BOOKING_RULES_INFO_BUTTON,"Кнопка информации о правилах бронирования не обнаружена",2);
-//        this.waitForElementPresent(PAYLATE_BANNER,"Баннер приобретения билета в рассрочку не отображается",2);
+        this.waitForElementPresent(PAYLATE_BANNER,"Баннер приобретения билета в рассрочку не отображается",2);
         this.waitForElementPresent(SEARCH_BUTTON,"Кнопка поиска не обнаружена",2);
         this.swipeDown(200);
     }
@@ -200,7 +203,7 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementAndClick(ADD_ITINERARY_SEGMENT_BUTTON,"Кнопка добавления сложного перелета не найдена",2);
         this.swipeDownQuick();
         this.waitForElementPresent(DELETE_ITINERARY_SEGMENT_BUTTON,"Кнопка удаления дополнительного перелета не найдена",2);
-        this.waitForElementPresent(ADD_ANOTHER_ITINERARY_SEGMENT_BUTTON,"Кнопка добавления дополнительного перелета не найдена",2);
+        this.swipeUpToFindElement(ADD_ITINERARY_SEGMENT_BUTTON,"Кнопка добавления дополнительного перелета не найдена",2);
     }
     public void deleteItinerarySegment(){
         this.swipeDownQuick();
