@@ -2,6 +2,8 @@ package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -9,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -17,7 +20,7 @@ public class MainPageObject {
     public MainPageObject (AppiumDriver driver) {this.driver = driver;}
 
     //Метод для определения типа локаторов
-    private By getLocatorByString (String locator_with_type){
+    public By getLocatorByString (String locator_with_type){
         String[] exploded_locator = locator_with_type.split(Pattern.quote(":"),2);
         String by_type = exploded_locator[0];
         String locator = exploded_locator[1];
@@ -41,12 +44,12 @@ public class MainPageObject {
         );
     }
 
-    // Метод для получения текстового содержимого элемента
-    public String getElementText (String locator){
-        By by = this.getLocatorByString(locator);
-        String element = driver.findElement(by).getText();
-        return element;
-    }
+//    // Метод для получения текстового содержимого элемента
+//    public String getElementText (String locator){
+//        By by = this.getLocatorByString(locator);
+//        String element = driver.findElement(by).getText();
+//        return element;
+//    }
 
     public WebElement waitForElementAndClick (String locator, String error_message, long timeoutInSeconds){
         WebElement element = waitForElementPresent(locator, error_message, timeoutInSeconds);
@@ -77,7 +80,8 @@ public class MainPageObject {
 
     public void freeTap(){
         TouchAction action = new TouchAction(driver);
-        action.press(10, 500).release().perform();
+        action.press(PointOption.point(10, 500)).release().perform();
+//        action.press(10, 500).release().perform();
     }
 
     public void swipeDown (int timeOfSwipe){
@@ -86,10 +90,11 @@ public class MainPageObject {
         int x = size.width/2;
         int start_y = (int) (size.height*0.6);
         int end_y = (int) (size.height*0.9);
-        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x,end_y).release().perform();
+        action.press(PointOption.point(x, start_y)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(timeOfSwipe))).moveTo(PointOption.point(x,end_y)).release().perform();
+//      action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x,end_y).release().perform();
     }
     public void swipeDownQuick(){
-        swipeDown(100);
+        swipeDown(600);
     }
 
     public void swipeUp (int timeOfSwipe){
@@ -98,11 +103,11 @@ public class MainPageObject {
         int x = size.width/2;
         int start_y = (int) (size.height*0.8);
         int end_y = (int) (size.height*0.2);
-        action.press(x, start_y).waitAction(timeOfSwipe).moveTo(x,end_y).release().perform();
+        action.press(PointOption.point(x, start_y)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(timeOfSwipe))).moveTo(PointOption.point(x,end_y)).release().perform();
     }
 
     public void swipeUpQuick(){
-        swipeUp(200);
+        swipeUp(600);
     }
 
     public void swipeUpToFindElement(String locator,String error_message, int max_swipes){
@@ -113,26 +118,10 @@ public class MainPageObject {
                 waitForElementPresent(locator, "Cannot find element by swiping up. \n" + error_message, 0);
                 return;
             }
-            swipeUpQuick();
+            swipeUp(1000);
             ++already_swiped;
         }
     }
-// Для iOS
-//    public void swipeUpTillElementAppear(String locator, String error_message, int max_swipes){
-//        int already_swiped = 0;
-//        while (!this.isElementLocatedOnTheScreen(locator)){
-//            if (already_swiped > max_swipes){
-//                Assert.assertTrue(error_message, this.isElementLocatedOnTheScreen(locator));
-//            }
-//            swipeUpQuick();
-//            ++already_swiped;
-//        }
-//    }
-//    public boolean isElementLocatedOnTheScreen(String locator){
-//        int element_location_by_y = this.waitForElementPresent(locator,"Не удалось найти элемент по локатору "+locator,1).getLocation().getY();
-//        int screen_size_by_y = driver.manage().window().getSize().getHeight();
-//        return element_location_by_y < screen_size_by_y;
-//    }
 
     public void swipeLeftToFindElement(String swipe_position,String locator, String error_message, int max_swipes){
         By by = this.getLocatorByString(swipe_position);
@@ -146,7 +135,8 @@ public class MainPageObject {
             int left_x = element.getLocation().getX();
             int right_x = left_x + element.getSize().getWidth();
             int middle_y = element.getLocation().getY() + element.getSize().getHeight() / 2;
-            action.press(right_x, middle_y).waitAction(500).moveTo(left_x, middle_y).release().perform();
+            action.press(PointOption.point(right_x, middle_y)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(PointOption.point(left_x, middle_y)).release().perform();
+            //            action.press(right_x, middle_y).waitAction(500).moveTo(left_x, middle_y).release().perform();
             ++already_swiped;
         }
     }
@@ -159,9 +149,9 @@ public class MainPageObject {
         int lower_y = upper_y + element.getSize().getHeight();
         int middle_y = (upper_y + lower_y)/2;
         TouchAction action = new TouchAction(driver);
-        action.press(right_x, middle_y);
-        action.waitAction(100);
-        action.moveTo(left_x, middle_y);
+        action.press(PointOption.point(right_x, middle_y));
+        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)));
+        action.moveTo(PointOption.point(left_x, middle_y));
         action.release();
         action.perform();
     }
@@ -176,6 +166,13 @@ public class MainPageObject {
         }
     }
 
+    // Метод для получения атрибута элемента
+    public String getElementValue(String locator, String attribute){
+        By by = this.getLocatorByString(locator);
+        String element = driver.findElement(by).getAttribute(attribute);
+        return element;
+    }
+
     public int getAmountOfElements(String locator){
         By by = this.getLocatorByString(locator);
         List elements = driver.findElements(by);
@@ -187,10 +184,10 @@ public class MainPageObject {
         int already_swiped = 0;
         while(!element_found) {
             if (this.isElementPresent(keyword_locator)){
-                waitForElementAndClick(keyword_locator,"Не удалсоь выбрать найденное значение.",3);
+                waitForElementAndClick(keyword_locator,"Не удалось выбрать найденное значение.",3);
                 element_found = true;
             } else if (already_swiped > max_swipes){
-                throw new AssertionError("Не удалось найти нужное значение в списке");
+                throw new AssertionError("Не удалось найти нужное значение в списке: "+keyword_locator);
             }
             else {
                 TouchAction action = new TouchAction(driver);
@@ -198,7 +195,7 @@ public class MainPageObject {
                 int middleX = element.getLocation().getX() + element.getSize().getWidth() / 2;
                 int upperY = element.getLocation().getY();
                 int lowerY = upperY + element.getSize().getHeight() - 50;
-                action.press(middleX, lowerY).waitAction(1200).moveTo(middleX, upperY).release().perform(); //waitAction(1200) для GenyMotion
+                action.press(PointOption.point(middleX, lowerY)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1200))).moveTo(PointOption.point(middleX, upperY)).release().perform();
                 ++already_swiped;
                 continue;
             }
@@ -210,10 +207,10 @@ public class MainPageObject {
         int already_swiped = 0;
         while(!element_found) {
             if (this.isElementPresent(keyword_locator)){
-                waitForElementAndClick(keyword_locator,"Не удалсоь выбрать найденное значение.",3);
+                waitForElementAndClick(keyword_locator,"Не удалось выбрать найденное значение.",3);
                 element_found = true;
             } else if (already_swiped > max_swipes){
-                throw new AssertionError("Не удалось найти нужное значение в списке");
+                throw new AssertionError("Не удалось найти нужное значение в списке: "+keyword_locator);
             }
             else {
                 TouchAction action = new TouchAction(driver);
@@ -221,11 +218,15 @@ public class MainPageObject {
                 int middleX = element.getLocation().getX() + element.getSize().getWidth() / 2;
                 int upperY = element.getLocation().getY();
                 int lowerY = upperY + element.getSize().getHeight() - 50;
-                action.press(middleX, upperY).waitAction(1100).moveTo(middleX, lowerY).release().perform();
+                action.press(PointOption.point(middleX, upperY)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1100))).moveTo(PointOption.point(middleX, lowerY)).release().perform();
                 ++already_swiped;
                 continue;
             }
         }
+    }
+
+    public String firstLetterToUpperCase(String word){
+        return word.toLowerCase().substring(0,1).toUpperCase()+word.toLowerCase().substring(1);
     }
 
     public void getDate (String date){

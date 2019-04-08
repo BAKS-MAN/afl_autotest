@@ -2,7 +2,6 @@ package lib.ui.Booking;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MainPageObject;
-import lib.ui.MenuPageObject;
 
 public class PaymentPageObject extends MainPageObject {
     public PaymentPageObject(AppiumDriver driver){super(driver);}
@@ -28,12 +27,7 @@ public class PaymentPageObject extends MainPageObject {
             BASE_PRICE = "id:tvBasePrice",
             TAXES_CHARGES = "id:tvAdditional",
             BOOKING_CODE = "id:tvBookingCode",
-            INSURANCE_LAYOUT = "id:llInsurance",
-            INSURANCE_DESCRIPTION_BUTTON = "id:btnInsuranceDescription",
-            INSURANCE_COST = "id:tvInsuranceCost",
-            INSURANCE_SWITCH = "id:swInsuranceInOrder",
-            INSURANCE_CONDITIONS_LINK = "id:tvInsuranceConditions",
-            INSURANCE_RULES_LINK = "id:tvInsuranceRules",
+            GOOGLE_PAY_BUTTON = "id:btnGooglePay",
             PAYMENT_SELECTOR = "id:payment_instruments_spinner",
             PAYMENT_SELECTOR_TPL = "xpath://*[contains(@resource-id,'text1')][@text = '{PAYMENT_METHOD}']",
             CARD_NUMBER_FIELD = "id:payment_pan_input",
@@ -55,7 +49,7 @@ public class PaymentPageObject extends MainPageObject {
 
     public void checkAlertAndClose(String alert_title){
         waitForElementPresent(ALERT_TITLE,"Алерт с результатом выполнения операции не отобразился",60);
-        if (this.getElementText(ALERT_TITLE).equals(alert_title)){
+        if (this.getElementValue(ALERT_TITLE,"text").equals(alert_title)){
             this.waitForElementAndClick(ALERT_OK_BUTTON,"Кнопка закрытия алерта не найдена",40);
         } else {
             throw new AssertionError("Алерт '"+alert_title+"' не был отображен");
@@ -82,13 +76,8 @@ public class PaymentPageObject extends MainPageObject {
         swipeUpToFindElement(BASE_PRICE,"Отсутствует информация о базовом тарифе",3);
         waitForElementPresent(TAXES_CHARGES,"Отсутствует информация о таксах и сборах",3);
         waitForElementPresent(BOOKING_CODE,"Отсутствует информация о полученном коде бронирования",3);
-        waitForElementPresent(INSURANCE_LAYOUT,"Отсутствует информация о полетной страховке",3);
-        waitForElementPresent(INSURANCE_DESCRIPTION_BUTTON,"Отсутствует кнопка перехода к подробностям полетной страховки",3);
-        waitForElementPresent(INSURANCE_COST,"Отсутствует информация о цене полетной страховки",3);
-        swipeUpToFindElement(INSURANCE_SWITCH,"Не найден переключатель страховки в заказе",3);
-        waitForElementPresent(INSURANCE_CONDITIONS_LINK,"Отсутствует ссылка на покрытия и условия полетной страховки",3);
-        waitForElementPresent(INSURANCE_RULES_LINK,"Отсутствует ссылка на подробные правила страхования",3);
-        waitForElementPresent(PAYMENT_SELECTOR,"Отсутствует поле выбора способа оплаты",3);
+        waitForElementPresent(GOOGLE_PAY_BUTTON,"Кнопка оплаты с помощью Google Pay не найдена",3);
+        swipeUpToFindElement(PAYMENT_SELECTOR,"Отсутствует поле выбора способа оплаты",3);
         waitForElementPresent(CARD_NUMBER_FIELD,"Отсутствует поле ввода номера карты",3);
         waitForElementPresent(CARD_HOLDER_FIELD,"Отсутствует поле ввода владельца карты",3);
         waitForElementPresent(CARD_EXPIRY_FIELD,"Отсутствует поле ввода срока действия карты",3);
@@ -98,12 +87,22 @@ public class PaymentPageObject extends MainPageObject {
         waitForElementPresent(PAY_BUTTON,"Не найдена кнопка оплаты бронирования",3);
     }
     public void goToPaymentScreen(String origin_city, String destination_city, Boolean OneWay){
-        SummaryPageObject SummaryPageObject = new SummaryPageObject(driver);
+        EssPageObject EssPageObject = new EssPageObject(driver);
 
-        SummaryPageObject.goToSummaryScreen(origin_city,destination_city,OneWay);
-        SummaryPageObject.pressBookButton();
+        EssPageObject.goToEssScreen(origin_city,destination_city,OneWay);
+        EssPageObject.pressPayButton();
         this.checkPaymentScreen();
     }
+
+    public void goToPaymentScreenWithEss(String origin_city, String destination_city, Boolean OneWay){
+        EssPageObject EssPageObject = new EssPageObject(driver);
+
+        EssPageObject.goToEssScreen(origin_city,destination_city,OneWay);
+        EssPageObject.selectAllEss();
+        EssPageObject.pressPayButton();
+        this.checkPaymentScreen();
+    }
+
     public void selectGiftCertificateToPay(){
         this.waitForElementAndClick(PAYMENT_SELECTOR,"Отсутствует поле выбора способа оплаты",5);
         String payment_method = "Подарочный сертификат";

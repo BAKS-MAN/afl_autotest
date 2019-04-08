@@ -8,13 +8,18 @@ public class BookingTests extends CoreTestCase {
 
     @Test
     public void testChangeOriginAndDestinationCity(){
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
+        BookingPageObject BookingPageObject = getBookingPageObject();
         BookingPageObject.openBookingScreen();
         BookingPageObject.typeOriginCityAndSelect("Минск");
         BookingPageObject.typeDestinationCityAndSelect("Краснодар");
         BookingPageObject.changeOriginCity("Сочи");
         BookingPageObject.changeDestinationCity("Мюнхен");
     }
+
+    private BookingPageObject getBookingPageObject() {
+        return new BookingPageObject(driver);
+    }
+
     @Test
     public void testSwapCities(){
         BookingPageObject BookingPageObject = new BookingPageObject(driver);

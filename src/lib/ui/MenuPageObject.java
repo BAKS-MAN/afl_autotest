@@ -8,7 +8,7 @@ public class MenuPageObject extends MainPageObject{
 
     protected static final String
             MENU_BUTTON = "xpath://android.widget.ImageButton[@content-desc='close']",
-            MAIN_MENU = "id:ru.aeroflot.afltest:id/navigation_view",
+            MAIN_MENU = "id:navigation_view",
             MENU_ITEM_BY_NAME_TPL = "xpath://android.widget.CheckedTextView[@text='{MENU_ITEM_NAME}']";
 
 
@@ -28,19 +28,4 @@ public class MenuPageObject extends MainPageObject{
         String menu_item_xpath = getMenuItemByName(menu_item_name);
         this.waitForElementAndClick(menu_item_xpath,"Пункт меню '"+menu_item_name+"' не найден",5);
     }
-
-    public void openBookingScreen(){
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
-        this.clickMenuButton();
-        this.clickMenuItemByName("Купить билет");
-        BookingPageObject.waitForBookingScreenTitle();
-    }
-
-    public void openReservationSearchScreen(){
-        BookingPageObject BookingPageObject = new BookingPageObject(driver);
-        this.clickMenuButton();
-        this.clickMenuItemByName("Поиск бронирования");
-        BookingPageObject.waitForBookingScreenTitle();
-    }
-
 }

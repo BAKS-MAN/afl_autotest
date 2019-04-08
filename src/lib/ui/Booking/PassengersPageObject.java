@@ -12,6 +12,9 @@ public class PassengersPageObject extends MainPageObject {
             PASSENGERS_BLOCK = "id:flPassengers",
             ALERT_TXT = "xpath://*[@resource-id = 'android:id/message'][contains(@text,'Отчество')]",
             ALERT_OK_BUTTON = "id:android:id/button1",
+            ADD_PASSENGER_DATA = "xpath://android.widget.LinearLayout/android.view.ViewGroup/android.widget.ImageButton",
+            ADD_PASSENGER_DATA_SCAN = "id:fabScan",
+            ADD_PASSENGER_DATA_LOGIN = "id:fabLogin",
             PASSENGER_TITLE = "id:tvPassengerHeader",
             PASSENGER_TITLE_TPL = "xpath://*[contains(@resource-id,'tvPassengerHeader')][contains(@text,'{TYPE} {QUEUE_NUMBER}')]",
             PASSENGER_NAME = "id:tvPassengerName",
@@ -74,6 +77,7 @@ public class PassengersPageObject extends MainPageObject {
         if (this.isElementPresent(ALERT_TXT)){
             this.waitForElementAndClick(ALERT_OK_BUTTON,"Кнопка закрытия алерта не найдена",3);
         }
+        this.waitForElementPresent(ADD_PASSENGER_DATA,"Кнопка выбора способов заполнения данных о пассажире не найдена",2);
         this.waitForElementPresent(FIRST_NAME_FIELD,"Поле ввода имени пассажира не найдено",2);
         this.waitForElementPresent(LAST_NAME_FIELD,"Поле ввода фамилии пассажира не найдено",2);
         this.waitForElementPresent(MIDDLE_NAME_FIELD,"Поле ввода отчества пассажира не найдено",2);

@@ -2,7 +2,6 @@ package lib.ui.Booking;
 
 import io.appium.java_client.AppiumDriver;
 import lib.ui.MainPageObject;
-import lib.ui.MenuPageObject;
 
 public class SummaryPageObject extends MainPageObject {
     public SummaryPageObject (AppiumDriver driver){super(driver);}
@@ -89,7 +88,7 @@ public class SummaryPageObject extends MainPageObject {
     }
 
     public void pressBookButton(){
-        waitForElementAndClick(BOOK_BUTTON,"Кнопка перехода к экрану оплаты не найдена",2);
+        waitForElementAndClick(BOOK_BUTTON,"Кнопка перехода к экрану выбора дополнительных услуг не найдена",2);
     }
 
 }

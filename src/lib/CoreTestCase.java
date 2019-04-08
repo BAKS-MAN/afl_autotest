@@ -3,10 +3,12 @@ package lib;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import junit.framework.TestCase;
-import lib.ui.MainPageObject;
+import lib.ui.GDPRPageObject;
+import lib.ui.LoginPageObject;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.time.Duration;
 
 public class CoreTestCase extends TestCase {
     protected AppiumDriver driver;
@@ -28,7 +30,7 @@ public class CoreTestCase extends TestCase {
 //        capabilities.setCapability("app","E:/Dev/AutoTest/Aeroflot/apks/app-afltest-x86-release.apk");
 
         driver = new AndroidDriver(new URL(AppiumURL),capabilities);
-        this.skipLoginWindow();
+        this.skipToMenu();
     }
 
     @Override
@@ -36,13 +38,10 @@ public class CoreTestCase extends TestCase {
         driver.quit();
         super.tearDown();
     }
-    protected void backgroungApp (int seconds) {driver.runAppInBackground(seconds);}
+    protected void backgroungApp (int seconds) {driver.runAppInBackground(Duration.ofSeconds(seconds));}
 
-    private void skipLoginWindow(){
-        MainPageObject MainPageObject = new MainPageObject(driver);
-        MainPageObject.waitForElementPresent("id:user-data","Экран авторизации не отобразился",15);
-//        MainPageObject.waitForElementPresent("id:ru.aeroflot.afltest:id/auth_username","Экран авторизации не отобразился",15); //Экран авторизации до v3.16
-//        try {Thread.sleep(10000);} catch (Exception e) {}
-        driver.navigate().back();
+    private void skipToMenu(){
+        GDPRPageObject GDPRPageObject = new GDPRPageObject(driver);
+        GDPRPageObject.confirmGDPR();
     }
 }

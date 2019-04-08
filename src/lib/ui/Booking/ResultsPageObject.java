@@ -71,7 +71,7 @@ public class ResultsPageObject extends MainPageObject {
         this.waitForElementAndClick(ALTERNATIVES_RESULT_CITY_CODE, "Не удалось найти альтернативный маршрут для выбора", 7);
         this.waitForElementPresent(CHANGE_ROUTE_ALERT, "Окно изменения маршрута не обнаружено", 5);
         this.waitForElementAndClick(CHANGE_ROUTE_CANCEL_BUTTON,"Кнопка отмены не найдена",3);
-        String new_destination = getElementText(ALTERNATIVES_RESULT_CITY_CODE);
+        String new_destination = getElementValue(ALTERNATIVES_RESULT_CITY_CODE,"text");
         String alt_destination_xpath = getAlternativeDestinationCityByCode(new_destination);
         this.waitForElementAndClick(ALTERNATIVES_RESULT_CITY_CODE, "Не удалось выбрать альтернативный маршрут", 7);
         this.waitForElementPresent(alt_destination_xpath,"В окне подтверждения код города прилета не совпадает с выбранным: '"+new_destination+"'",3);

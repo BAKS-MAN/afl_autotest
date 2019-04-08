@@ -48,19 +48,19 @@ public class FlightDetailsPageObject extends MainPageObject {
 
     public void selectSeatsClass(String seats_class){
         if (seats_class.equals("Эконом")){
-            if (getElementText(ECONOMY_CLASS_BUTTON).equals("Продано") && (!getElementText(BUSINESS_CLASS_BUTTON).equals("Продано"))){
+            if (getElementValue(ECONOMY_CLASS_BUTTON,"text").equals("Продано") && (!getElementValue(BUSINESS_CLASS_BUTTON,"text").equals("Продано"))){
                 this.waitForElementAndClick(BUSINESS_CLASS_BUTTON,"Кнопка выбора бизнес класса не найдена",5);
             }else {
                 this.waitForElementAndClick(ECONOMY_CLASS_BUTTON, "Кнопка выбора эконом класса не найдена", 5);
             }
         } else if (seats_class.equals("Комфорт")){
-            if (getElementText(COMFORT_CLASS_BUTTON).equals("Продано")&& (!getElementText(BUSINESS_CLASS_BUTTON).equals("Продано"))){
+            if (getElementValue(COMFORT_CLASS_BUTTON,"text").equals("Продано")&& (!getElementValue(BUSINESS_CLASS_BUTTON,"text").equals("Продано"))){
                 this.waitForElementAndClick(BUSINESS_CLASS_BUTTON,"Кнопка выбора бизнес класса не найдена",5);
             }else {
-                this.waitForElementAndClick(ECONOMY_CLASS_BUTTON,"Кнопка выбора комфорт класса не найдена",5);
+                this.waitForElementAndClick(COMFORT_CLASS_BUTTON,"Кнопка выбора комфорт класса не найдена",5);
             }
         } else if (seats_class.equals("Бизнес")){
-            if (getElementText(BUSINESS_CLASS_BUTTON).equals("Продано")){
+            if (getElementValue(BUSINESS_CLASS_BUTTON,"text").equals("Продано")){
                 this.waitForElementAndClick(ECONOMY_CLASS_BUTTON, "Кнопка выбора эконом класса не найдена", 5);
             }else {
                 this.waitForElementAndClick(BUSINESS_CLASS_BUTTON,"Кнопка выбора бизнес класса не найдена",5);
@@ -69,7 +69,6 @@ public class FlightDetailsPageObject extends MainPageObject {
             throw new AssertionError("Класс указан неверно, нужно указать 'Эконом'/'Комфорт'/'Бизнес'");
         }
     }
-
     public void checkFlightDetailsScreen(){
         this.waitForElementPresent(FLIGHT_INFO,"Блок с информацией о перелете не найден",2);
         this.waitForElementPresent(TARIFF_INFO,"Блок с информацией о перелете не найден",2);

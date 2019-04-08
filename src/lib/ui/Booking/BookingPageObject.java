@@ -13,11 +13,13 @@ public class BookingPageObject extends MainPageObject {
 
     protected static final String
             BOOKING_SCREEN_TITLE = "xpath://*[@resource-id='booking_toolbar']//*[@text='Купить билет']",
+            SPEECH_BUTTON = "id:menu_speech",
+            SPEECH_INFO_OK_BUTTON = "xpath://android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.Button",
             REGULAR_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab[1]",
             MILE_SEARCH_TAB = "xpath://android.support.v7.app.ActionBar.Tab[2]",
             CITY_ORIGIN_FIELD = "id:tlAirportFrom",
 //            CITY_ORIGIN_FIELD_TEXT = "xpath://*[contains(@resource-id,'tlAirportFrom')]//*[contains(@resource-id,'tvFirstLineText')]",
-            CITY_ORIGIN_FIELD_TEXT = "xpath://android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]",
+            CITY_ORIGIN_FIELD_TEXT =   "xpath://android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]",
             CITY_DESTINATION_FIELD = "id:tlAirportTo",
 //            CITY_DESTINATION_FIELD_TEXT = "xpath://*[contains(@resource-id,'tlAirportTo')]//*[contains(@resource-id,'tvFirstLineText')]",
             CITY_DESTINATION_FIELD_TEXT = "xpath://android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.TextView[1]",
@@ -78,6 +80,7 @@ public class BookingPageObject extends MainPageObject {
     }
 
     public void initBookingScreen(){
+        this.waitForElementPresent(SPEECH_BUTTON,"Кнопка голосового поиска не обнаружена",2);
         this.waitForElementPresent(REGULAR_SEARCH_TAB,"Вкладка обычного поиска не обнаружена",2);
         this.waitForElementPresent(MILE_SEARCH_TAB,"Вкладка мильного поиска не обнаружена",2);
         this.waitForElementPresent(CITY_ORIGIN_FIELD,"Поле выбора города отправления не найдено",2);
@@ -105,6 +108,9 @@ public class BookingPageObject extends MainPageObject {
         MenuPageObject MenuPageObject = new MenuPageObject(driver);
         MenuPageObject.clickMenuButton();
         MenuPageObject.clickMenuItemByName("Купить билет");
+        if (this.isElementPresent(SPEECH_INFO_OK_BUTTON)){
+            this.waitForElementAndClick(SPEECH_INFO_OK_BUTTON,"Не удалось нажать на кнопку закрытия подсказки голосового поиска",3);
+        }
         this.initBookingScreen();
     }
 
@@ -113,7 +119,8 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementAndClick(CITY_ORIGIN_FIELD,"Поле выбора города отправления не найдено",3);
         this.waitForElementAndSendKeys(CITY_SEARCH_FIELD, origin_city, "Поле ввода города отправления не найдено",5);
         this.waitForElementAndClick(origin_city_xpath,"В списке результатов отсутствует "+origin_city,3);
-        String origin_city_actual = getElementText(CITY_ORIGIN_FIELD_TEXT);
+        this.waitForElementPresent(CITY_ORIGIN_FIELD_TEXT,"Выбранный город вылета не отобразился",3);
+        String origin_city_actual = getElementValue(CITY_ORIGIN_FIELD_TEXT,"text");
         if (!origin_city_actual.equals(origin_city.toUpperCase())){
             throw new IllegalArgumentException("Город вылета '"+origin_city_actual+"' не соответствует выбранному: '"+origin_city.toUpperCase()+"'");
         }
@@ -123,9 +130,10 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementAndClick(CITY_DESTINATION_FIELD,"Поле выбора города прибытия не найдено",3);
         this.waitForElementAndSendKeys(CITY_SEARCH_FIELD, destination_city, "Поле ввода города прибытия не найдено",5);
         this.waitForElementAndClick(destination_city_xpath,"В списке результатов отсутствует "+destination_city,3);
-        String destination_city_actual = getElementText(CITY_DESTINATION_FIELD_TEXT);
+        this.waitForElementPresent(CITY_DESTINATION_FIELD_TEXT,"Выбранный город прилета не отобразился",3);
+        String destination_city_actual = getElementValue(CITY_DESTINATION_FIELD_TEXT,"text");
         if (!destination_city_actual.equals(destination_city.toUpperCase())){
-            throw new IllegalArgumentException("Город вылета '"+destination_city_actual+"' не соответствует выбранному: '"+destination_city.toUpperCase()+"'");
+            throw new IllegalArgumentException("Город прилета '"+destination_city_actual+"' не соответствует выбранному: '"+destination_city.toUpperCase()+"'");
         }
     }
     public void setSameCities(String origin_city){
@@ -136,8 +144,10 @@ public class BookingPageObject extends MainPageObject {
         this.waitForElementAndClick(CITY_DESTINATION_FIELD,"Поле выбора города прибытия не найдено",3);
         this.waitForElementAndSendKeys(CITY_SEARCH_FIELD, origin_city, "Поле ввода города прибытия не найдено",5);
         this.waitForElementAndClick(origin_city_xpath,"В списке результатов отсутствует "+origin_city,3);
-        String origin_city_actual = getElementText(CITY_ORIGIN_FIELD_TEXT);
-        String destination_city_actual = getElementText(CITY_DESTINATION_FIELD_TEXT);
+        this.waitForElementPresent(CITY_ORIGIN_FIELD_TEXT,"Выбранный город вылета не отобразился",3);
+        this.waitForElementPresent(CITY_DESTINATION_FIELD_TEXT,"Выбранный город прилета не отобразился",3);
+        String origin_city_actual = getElementValue(CITY_ORIGIN_FIELD_TEXT,"text");
+        String destination_city_actual = getElementValue(CITY_DESTINATION_FIELD_TEXT,"text");
         if (destination_city_actual.equals(origin_city_actual)){
             throw new IllegalArgumentException("Указан одинаковый город вылета и прилета");
         }

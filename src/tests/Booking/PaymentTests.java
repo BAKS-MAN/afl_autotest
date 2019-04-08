@@ -20,4 +20,12 @@ public class PaymentTests extends CoreTestCase {
         PaymentPageObject.fillCardPaymentData("5555555555555599","1219","123");
         PaymentPageObject.pressPayButton();
     }
+
+    @Test
+    public void testPayForBookingWithEss(){
+        PaymentPageObject PaymentPageObject = new PaymentPageObject(driver);
+        PaymentPageObject.goToPaymentScreenWithEss("Москва","Минск",true);
+        PaymentPageObject.fillCardPaymentData("5555555555555599","1219","123");
+        PaymentPageObject.pressPayButton();
+    }
 }
